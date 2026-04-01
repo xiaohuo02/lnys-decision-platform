@@ -1,0 +1,76 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  柠优生活大数据平台 · Docker build context 排除规则
+#  ⚠️  缺少此文件是导致 .env 被打包进镜像、连接到云服务器 IP 的根本原因
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── 敏感配置（绝不打包进镜像）─────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.prod
+.env.production
+*.key
+*.pem
+*.p12
+secrets/
+
+# ── 大体积数据/模型（运行时挂载，不打包）──────────────────────────────
+data/
+models/
+checkpoints/
+reports/
+notebooks/
+artifact_store/
+
+# ── 前端构建产物和依赖（在镜像内重新构建）────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+
+# ── Python 虚拟环境和缓存 ─────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.so
+
+# ── Git ───────────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── 日志 ──────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── IDE / 系统文件 ────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ── Jupyter ───────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Docker 卷数据 ─────────────────────────────────────────────────────
+.docker/
+mysql_data/
+redis_data/
+
+# ── 例外：.env.docker 和 .env.example 可以进入 build context ──────────
+# （但后端镜像不读它们，仅作文档参考）
+!.env.example
+!.env.docker

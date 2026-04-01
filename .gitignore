@@ -1,0 +1,155 @@
+# ═══════════════════════════════════════════════════════
+#  柠优生活大数据平台 · .gitignore
+# ═══════════════════════════════════════════════════════
+
+# ── 数据文件（体积过大 / 可重新生成）──────────────────────
+data/
+chroma_data/
+
+# ── 模型文件（通过网盘分发）────────────────────────────────
+models/
+# 例外：backend/models/ 是 ORM Python 代码，非 ML 二进制文件
+!backend/models/
+
+# ── ML 训练检查点 ──────────────────────────────────────────
+checkpoints/
+
+# ── 生成报告 ───────────────────────────────────────────────
+reports/
+
+# ── Jupyter Notebooks ─────────────────────────────────────
+notebooks/
+*.ipynb
+
+# ── 根目录原型文件（非正式前端产物）──────────────────────────
+index_ui_v3.html
+
+# ── 敏感配置（绝不提交）────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.prod
+.env.production
+.env.bak.20260429-200251
+.env.docker
+*.key
+*.pem
+*.p12
+secrets/
+
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+*.dist-info/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.so
+
+# ── 日志 ──────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Jupyter ───────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb~
+
+# ── 前端依赖和构建产物 ────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+
+# ── 系统文件 ──────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ── 编辑器 ────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# ── Docker 卷数据 ────────────────────────────────────────
+.docker/
+mysql_data/
+redis_data/
+
+# ── 归档文档（历史版本备份，不进仓库）────────────────────
+docs/docs-fq/
+
+# ── Artifact 运行时产物（不进仓库，由 Docker volume 管理）────────
+artifact_store/*
+!artifact_store/**/.gitkeep
+
+# ── 个人本地文档（不进仓库）────────────────────────────
+docs/plan/个人task.md
+
+# ── 环境变量备份 / 临时标记 ─────────────────────────────
+.env.*backup*
+.env.test_backup_flag
+
+# ── 临时修复 SQL ───────────────────────────────────────
+backend/db/fix_encoding*.sql
+
+# ── AI 协作临时产物（探针/部署/健康检查脚本，跑完即弃，不进仓库）──
+# 用 scripts/db_sql_maintenance.ps1 -Mode Cleanup -CleanTempScripts 统一清理
+_tmp_*
+_probe_*
+_health_*
+_deploy_*
+_remote_deploy_*
+_backend_deploy*
+
+# ── 压缩包产物（打包脚本随时可重新生成，不进仓库）──────
+*.tar.gz
+
+# ── 部署打包中间目录（deploy_pack.ps1 产出）─────────────
+deploy_tmp/
+
+# ── 知识库上传原文件（含用户业务文档，不进仓库）────────
+kb_uploads/
+backend/kb_uploads/
+
+# ── 临时测试脚本（根目录一次性验证用）──────────────────
+# test_*.sh  # 已取消：允许测试脚本
+/test_*.py
+
+# ── playwright-cli 运行时产物（在项目内执行命令时自动生成） ──
+.playwright-cli/
+*.png
+!frontend/**/*.png
+!docs/**/*.png
+
+# ── playwright-cli Skill 定义（依赖本地安装的 playwright-cli，别人环境可能没装） ──
+.windsurf/skills/playwright-cli/
+
+# ══════════════════════════════════════════════════════════
+#  例外：以下文件/目录强制提交
+# ══════════════════════════════════════════════════════════
+!.gitignore
+!.env.example
+!.env.docker.example
+!.env.prod.example
+!**/README.md
+!**/README.txt
+!**/.gitkeep
+!frontend/dist/.gitkeep

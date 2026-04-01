@@ -1,0 +1,115 @@
+# 本地 Docker Compose 开发环境
+# ⚠️  启动命令必须加 --env-file .env.docker，防止本地 .env 污染 compose 变量插值：
+#   docker compose --env-file .env.docker up -d --build
+#   docker compose --env-file .env.docker ps
+#   docker compose --env-file .env.docker logs -f backend
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - lnys-net
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      target: dev                        # 本地开发用 dev 镜像（含 --reload）
+    ports:
+      - "8000:8000"
+    env_file: .env.docker
+    environment:
+      - DB_HOST=mysql                    # 覆盖为 Docker 服务名（容器内部通信）
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=postgres             # config.py 从组件字段自动构造 POSTGRES_CHECKPOINT_URL
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data:ro
+      - ./backend:/app/backend           # 热重载挂载源码
+      - chroma_data:/app/chroma_data     # ChromaDB 向量持久化
+      - kb_uploads:/app/kb_uploads       # 知识库上传文件
+      - hf_cache:/root/.cache/huggingface  # HuggingFace 模型缓存（reranker等）
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+    networks:
+      - lnys-net
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE:      lnys_db
+      MYSQL_USER:          lnys_user
+      MYSQL_PASSWORD:      ${DB_PASSWORD:-lnys_password}
+    ports:
+      - "3307:3306"              # 外部用 3307，避免与本地 MySQL 冲突
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+      - ./backend/db/seed_prompts.sql:/docker-entrypoint-initdb.d/02_seed_prompts.sql:ro
+      - ./backend/db/seed_reviews.sql:/docker-entrypoint-initdb.d/03_seed_reviews.sql:ro
+      - ./backend/db/seed_traces.sql:/docker-entrypoint-initdb.d/04_seed_traces.sql:ro
+      - ./backend/db/seed_knowledge.sql:/docker-entrypoint-initdb.d/05_seed_knowledge.sql:ro
+      - ./backend/db/seed_team.sql:/docker-entrypoint-initdb.d/06_seed_team.sql:ro
+      - ./backend/db/seed_memory.sql:/docker-entrypoint-initdb.d/07_seed_memory.sql:ro
+      - ./backend/db/seed_kb_v2.sql:/docker-entrypoint-initdb.d/08_seed_kb_v2.sql:ro
+      - ./backend/db/migrations/eval_center_v2.sql:/docker-entrypoint-initdb.d/09_eval_center_v2.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+    networks:
+      - lnys-net
+
+  redis:
+    image: redis:7-alpine
+    command: >-
+      redis-server
+      ${REDIS_PASSWORD:+--requirepass }${REDIS_PASSWORD}
+    ports:
+      - "6380:6379"              # 外部用 6380，避免与本地 Redis 冲突
+    volumes:
+      - redis_data:/data
+    networks:
+      - lnys-net
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER:     ${POSTGRES_USER:-lnys_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lnys_pg_dev_password}
+      POSTGRES_DB:       ${POSTGRES_DB:-lnys_checkpoint}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lnys_user} -d ${POSTGRES_DB:-lnys_checkpoint}"]
+      interval: 10s
+      retries: 5
+    networks:
+      - lnys-net
+
+volumes:
+  mysql_data:
+  redis_data:
+  pg_data:
+  artifact_store:
+  chroma_data:
+  kb_uploads:
+  hf_cache:
+
+networks:
+  lnys-net:
+    driver: bridge
