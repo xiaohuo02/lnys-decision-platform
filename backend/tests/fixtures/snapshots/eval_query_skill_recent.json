@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "created_at": "2026-02-10 09:00:00",
+      "experiment_id": "exp-A",
+      "name": "inventory_v1",
+      "pass_rate": 0.92,
+      "status": "completed"
+    },
+    {
+      "created_at": "2026-02-10 09:00:00",
+      "experiment_id": "exp-B",
+      "name": "forecast_v2",
+      "pass_rate": 0.0,
+      "status": "failed"
+    }
+  ],
+  "title": "最近的评测实验 — 2 条"
+}

@@ -1,0 +1,133 @@
+[
+  { "id": "ef-001", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "一般多久可以发货？", "expected_doc_titles": ["一般多久可以发货？"], "expected_keywords": ["发货", "24"], "allow_multiple": false },
+  { "id": "ef-002", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "下单后多久能发出来", "expected_doc_titles": ["一般多久可以发货？"], "expected_keywords": ["发货"], "allow_multiple": false },
+  { "id": "ef-003", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "什么时候发货", "expected_doc_titles": ["一般多久可以发货？"], "expected_keywords": ["发货"], "allow_multiple": false },
+
+  { "id": "ef-004", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "优惠券怎么用", "expected_doc_titles": ["优惠券使用规则"], "expected_keywords": ["优惠券"], "allow_multiple": false },
+  { "id": "ef-005", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "优惠券使用规则", "expected_doc_titles": ["优惠券使用规则"], "expected_keywords": ["优惠券"], "allow_multiple": false },
+  { "id": "ef-006", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "代金券能叠加吗", "expected_doc_titles": ["优惠券使用规则"], "expected_keywords": ["优惠券", "叠加"], "allow_multiple": false },
+
+  { "id": "ef-007", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "VIP有什么权益", "expected_doc_titles": ["会员等级制度与权益"], "expected_keywords": ["VIP", "会员"], "allow_multiple": false },
+  { "id": "ef-008", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "会员等级有几种", "expected_doc_titles": ["会员等级制度与权益"], "expected_keywords": ["会员", "等级"], "allow_multiple": false },
+  { "id": "ef-009", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "成为会员有哪些好处", "expected_doc_titles": ["会员等级制度与权益"], "expected_keywords": ["会员"], "allow_multiple": false },
+
+  { "id": "ef-010", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "如何修改登录密码", "expected_doc_titles": ["如何修改登录密码？"], "expected_keywords": ["密码"], "allow_multiple": false },
+  { "id": "ef-011", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "怎么改密码", "expected_doc_titles": ["如何修改登录密码？"], "expected_keywords": ["密码"], "allow_multiple": false },
+  { "id": "ef-012", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "登录密码忘了怎么重置", "expected_doc_titles": ["如何修改登录密码？"], "expected_keywords": ["密码"], "allow_multiple": false },
+
+  { "id": "ef-013", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "如何参加平台优惠活动", "expected_doc_titles": ["如何参加平台优惠活动？"], "expected_keywords": ["优惠", "活动"], "allow_multiple": false },
+  { "id": "ef-014", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "平台有什么促销活动", "expected_doc_titles": ["如何参加平台优惠活动？"], "expected_keywords": ["优惠", "活动"], "allow_multiple": false },
+
+  { "id": "ef-015", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "如何取消订单", "expected_doc_titles": ["如何取消订单？"], "expected_keywords": ["取消", "订单"], "allow_multiple": false },
+  { "id": "ef-016", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "下错单了想取消", "expected_doc_titles": ["如何取消订单？"], "expected_keywords": ["取消", "订单"], "allow_multiple": false },
+  { "id": "ef-017", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "订单可以撤销吗", "expected_doc_titles": ["如何取消订单？"], "expected_keywords": ["取消", "订单"], "allow_multiple": false },
+
+  { "id": "ef-018", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "如何查询订单状态", "expected_doc_titles": ["如何查询订单状态？"], "expected_keywords": ["订单", "状态"], "allow_multiple": false },
+  { "id": "ef-019", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "我的订单到哪了", "expected_doc_titles": ["如何查询订单状态？"], "expected_keywords": ["订单"], "allow_multiple": false },
+  { "id": "ef-020", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "订单进度在哪看", "expected_doc_titles": ["如何查询订单状态？"], "expected_keywords": ["订单"], "allow_multiple": false },
+
+  { "id": "ef-021", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "如何绑定手机号", "expected_doc_titles": ["如何绑定/更换手机号？"], "expected_keywords": ["手机号"], "allow_multiple": false },
+  { "id": "ef-022", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "怎么换绑手机", "expected_doc_titles": ["如何绑定/更换手机号？"], "expected_keywords": ["手机号"], "allow_multiple": false },
+  { "id": "ef-023", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "更换手机号需要验证码吗", "expected_doc_titles": ["如何绑定/更换手机号？"], "expected_keywords": ["手机号"], "allow_multiple": false },
+
+  { "id": "ef-024", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "如何联系人工客服", "expected_doc_titles": ["如何联系人工客服？"], "expected_keywords": ["客服"], "allow_multiple": false },
+  { "id": "ef-025", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "客服电话多少", "expected_doc_titles": ["如何联系人工客服？"], "expected_keywords": ["客服"], "allow_multiple": false },
+  { "id": "ef-026", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "在线客服在哪里", "expected_doc_titles": ["如何联系人工客服？"], "expected_keywords": ["客服"], "allow_multiple": false },
+
+  { "id": "ef-027", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "支持哪些支付方式", "expected_doc_titles": ["平台支持哪些支付方式？"], "expected_keywords": ["支付"], "allow_multiple": false },
+  { "id": "ef-028", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "可以用微信支付吗", "expected_doc_titles": ["平台支持哪些支付方式？"], "expected_keywords": ["支付"], "allow_multiple": false },
+  { "id": "ef-029", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "能刷信用卡吗", "expected_doc_titles": ["平台支持哪些支付方式？"], "expected_keywords": ["支付"], "allow_multiple": false },
+
+  { "id": "ef-030", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "支持哪些快递公司", "expected_doc_titles": ["支持哪些快递公司？"], "expected_keywords": ["快递"], "allow_multiple": false },
+  { "id": "ef-031", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "用什么物流", "expected_doc_titles": ["支持哪些快递公司？"], "expected_keywords": ["快递"], "allow_multiple": false },
+  { "id": "ef-032", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "顺丰圆通中通都有吗", "expected_doc_titles": ["支持哪些快递公司？"], "expected_keywords": ["快递"], "allow_multiple": false },
+
+  { "id": "ef-033", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "收到商品有质量问题怎么办", "expected_doc_titles": ["收到商品有质量问题怎么办？"], "expected_keywords": ["质量"], "allow_multiple": false },
+  { "id": "ef-034", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "商品有瑕疵能换吗", "expected_doc_titles": ["收到商品有质量问题怎么办？"], "expected_keywords": ["质量"], "allow_multiple": false },
+  { "id": "ef-035", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "买的东西破损了", "expected_doc_titles": ["收到商品有质量问题怎么办？"], "expected_keywords": ["质量"], "allow_multiple": false },
+
+  { "id": "ef-036", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "数据安全与隐私保护政策", "expected_doc_titles": ["数据安全与隐私保护政策"], "expected_keywords": ["数据", "隐私"], "allow_multiple": false },
+  { "id": "ef-037", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "我的个人信息会被泄露吗", "expected_doc_titles": ["数据安全与隐私保护政策"], "expected_keywords": ["数据", "隐私"], "allow_multiple": false },
+
+  { "id": "ef-038", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "柠优生活是什么平台", "expected_doc_titles": ["柠优生活是什么平台？"], "expected_keywords": ["柠优生活"], "allow_multiple": false },
+  { "id": "ef-039", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "你们是做什么的", "expected_doc_titles": ["柠优生活是什么平台？"], "expected_keywords": ["柠优生活"], "allow_multiple": false },
+
+  { "id": "ef-040", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "物流显示签收但没收到", "expected_doc_titles": ["物流显示签收但没收到怎么办？"], "expected_keywords": ["签收"], "allow_multiple": false },
+  { "id": "ef-041", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "快递显示已签收但是没收到货", "expected_doc_titles": ["物流显示签收但没收到怎么办？"], "expected_keywords": ["签收"], "allow_multiple": false },
+  { "id": "ef-042", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "虚假签收怎么处理", "expected_doc_titles": ["物流显示签收但没收到怎么办？"], "expected_keywords": ["签收"], "allow_multiple": false },
+
+  { "id": "ef-043", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "订单可以修改收货地址吗", "expected_doc_titles": ["订单可以修改收货地址吗？"], "expected_keywords": ["地址"], "allow_multiple": false },
+  { "id": "ef-044", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "下单了想改地址", "expected_doc_titles": ["订单可以修改收货地址吗？"], "expected_keywords": ["地址"], "allow_multiple": false },
+
+  { "id": "ef-045", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "账户余额如何提现", "expected_doc_titles": ["账户余额如何提现？"], "expected_keywords": ["提现"], "allow_multiple": false },
+  { "id": "ef-046", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "钱包里的钱怎么取出来", "expected_doc_titles": ["账户余额如何提现？"], "expected_keywords": ["提现", "余额"], "allow_multiple": false },
+  { "id": "ef-047", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "余额提现到银行卡多久到账", "expected_doc_titles": ["账户余额如何提现？"], "expected_keywords": ["提现"], "allow_multiple": false },
+
+  { "id": "ef-048", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "退款一般多久到账", "expected_doc_titles": ["退款一般多久到账？"], "expected_keywords": ["退款", "到账"], "allow_multiple": false },
+  { "id": "ef-049", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "退款需要等几天", "expected_doc_titles": ["退款一般多久到账？"], "expected_keywords": ["退款"], "allow_multiple": false },
+
+  { "id": "ef-050", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "退款政策完整说明", "expected_doc_titles": ["退款政策完整说明"], "expected_keywords": ["退款"], "allow_multiple": false },
+  { "id": "ef-051", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "七天无理由退款", "expected_doc_titles": ["退款政策完整说明"], "expected_keywords": ["7天", "退款"], "allow_multiple": false },
+  { "id": "ef-052", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "什么情况下可以全额退款", "expected_doc_titles": ["退款政策完整说明"], "expected_keywords": ["退款"], "allow_multiple": false },
+
+  { "id": "ef-053", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "退货退款的流程是什么", "expected_doc_titles": ["退货退款的流程是什么？"], "expected_keywords": ["退货", "退款"], "allow_multiple": false },
+  { "id": "ef-054", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "想退货怎么操作", "expected_doc_titles": ["退货退款的流程是什么？"], "expected_keywords": ["退货"], "allow_multiple": false },
+  { "id": "ef-055", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "退货要寄到哪里", "expected_doc_titles": ["退货退款的流程是什么？"], "expected_keywords": ["退货"], "allow_multiple": false },
+
+  { "id": "ef-056", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "配送服务说明", "expected_doc_titles": ["配送服务说明"], "expected_keywords": ["配送"], "allow_multiple": false },
+  { "id": "ef-057", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "物流配送几天到", "expected_doc_titles": ["配送服务说明"], "expected_keywords": ["配送"], "allow_multiple": false },
+  { "id": "ef-058", "category": "enterprise_faq", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "加急配送多久", "expected_doc_titles": ["配送服务说明"], "expected_keywords": ["配送", "加急"], "allow_multiple": false },
+
+  { "id": "ef-059", "category": "enterprise_faq_fuzzy", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "退款", "expected_doc_titles": ["退款政策完整说明", "退款一般多久到账？", "退货退款的流程是什么？"], "expected_keywords": ["退款"], "allow_multiple": true },
+  { "id": "ef-060", "category": "enterprise_faq_fuzzy", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "客服", "expected_doc_titles": ["如何联系人工客服？"], "expected_keywords": ["客服"], "allow_multiple": true },
+  { "id": "ef-061", "category": "enterprise_faq_fuzzy", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "物流", "expected_doc_titles": ["支持哪些快递公司？", "配送服务说明", "物流显示签收但没收到怎么办？"], "expected_keywords": ["物流", "快递", "配送"], "allow_multiple": true },
+  { "id": "ef-062", "category": "enterprise_faq_fuzzy", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "签收没收到", "expected_doc_titles": ["物流显示签收但没收到怎么办？"], "expected_keywords": ["签收"], "allow_multiple": false },
+  { "id": "ef-063", "category": "enterprise_faq_fuzzy", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "改地址", "expected_doc_titles": ["订单可以修改收货地址吗？"], "expected_keywords": ["地址"], "allow_multiple": false },
+  { "id": "ef-064", "category": "enterprise_faq_fuzzy", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "提现", "expected_doc_titles": ["账户余额如何提现？"], "expected_keywords": ["提现"], "allow_multiple": false },
+  { "id": "ef-065", "category": "enterprise_faq_fuzzy", "kb_ids": ["kb-seed-0001-0001-0001-000000000001"], "query": "VIP", "expected_doc_titles": ["会员等级制度与权益"], "expected_keywords": ["VIP"], "allow_multiple": true },
+
+  { "id": "op-001", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "MySQL数据库日常运维", "expected_doc_titles": ["MySQL数据库日常运维手册"], "expected_keywords": ["MySQL"], "allow_multiple": false },
+  { "id": "op-002", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "MySQL慢查询怎么排查", "expected_doc_titles": ["MySQL数据库日常运维手册"], "expected_keywords": ["MySQL"], "allow_multiple": false },
+  { "id": "op-003", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "数据库备份策略", "expected_doc_titles": ["MySQL数据库日常运维手册"], "expected_keywords": ["MySQL", "备份"], "allow_multiple": false },
+  { "id": "op-004", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "innodb 配置优化", "expected_doc_titles": ["MySQL数据库日常运维手册"], "expected_keywords": ["MySQL"], "allow_multiple": false },
+
+  { "id": "op-005", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "Redis缓存运维", "expected_doc_titles": ["Redis缓存运维手册"], "expected_keywords": ["Redis"], "allow_multiple": false },
+  { "id": "op-006", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "Redis 内存占用过高", "expected_doc_titles": ["Redis缓存运维手册"], "expected_keywords": ["Redis"], "allow_multiple": false },
+  { "id": "op-007", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "Redis 持久化怎么配", "expected_doc_titles": ["Redis缓存运维手册"], "expected_keywords": ["Redis"], "allow_multiple": false },
+  { "id": "op-008", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "缓存淘汰策略", "expected_doc_titles": ["Redis缓存运维手册"], "expected_keywords": ["Redis", "缓存"], "allow_multiple": false },
+
+  { "id": "op-009", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "平台告警处理SOP", "expected_doc_titles": ["平台告警处理SOP"], "expected_keywords": ["告警"], "allow_multiple": false },
+  { "id": "op-010", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "收到 P0 告警怎么处理", "expected_doc_titles": ["平台告警处理SOP"], "expected_keywords": ["告警"], "allow_multiple": false },
+  { "id": "op-011", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "值班人员告警响应流程", "expected_doc_titles": ["平台告警处理SOP"], "expected_keywords": ["告警"], "allow_multiple": false },
+  { "id": "op-012", "category": "ops_runbook", "kb_ids": ["kb-seed-0003-0003-0003-000000000003"], "query": "Sentry 报警怎么跟进", "expected_doc_titles": ["平台告警处理SOP"], "expected_keywords": ["告警"], "allow_multiple": false },
+
+  { "id": "sr-001", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "2024年12月微博舆情摘要", "expected_doc_titles": ["2024年12月微博舆情摘要"], "expected_keywords": ["微博", "舆情"], "allow_multiple": false },
+  { "id": "sr-002", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "12月微博热点话题", "expected_doc_titles": ["2024年12月微博舆情摘要"], "expected_keywords": ["微博"], "allow_multiple": false },
+  { "id": "sr-003", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "去年12月微博讨论了什么", "expected_doc_titles": ["2024年12月微博舆情摘要"], "expected_keywords": ["微博"], "allow_multiple": false },
+  { "id": "sr-004", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "12月舆情情绪分布", "expected_doc_titles": ["2024年12月微博舆情摘要"], "expected_keywords": ["舆情"], "allow_multiple": false },
+
+  { "id": "sr-005", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "Q4 正面评论", "expected_doc_titles": ["2024年Q4正面评论合集"], "expected_keywords": ["正面"], "allow_multiple": false },
+  { "id": "sr-006", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "用户夸我们的好评有哪些", "expected_doc_titles": ["2024年Q4正面评论合集"], "expected_keywords": ["正面", "好评"], "allow_multiple": false },
+  { "id": "sr-007", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "Q4 用户满意度高的反馈", "expected_doc_titles": ["2024年Q4正面评论合集"], "expected_keywords": ["正面"], "allow_multiple": false },
+  { "id": "sr-008", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "好评合集", "expected_doc_titles": ["2024年Q4正面评论合集"], "expected_keywords": ["正面", "好评"], "allow_multiple": false },
+
+  { "id": "sr-009", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "Q4 负面评论", "expected_doc_titles": ["2024年Q4负面评论合集"], "expected_keywords": ["负面"], "allow_multiple": false },
+  { "id": "sr-010", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "用户投诉的差评", "expected_doc_titles": ["2024年Q4负面评论合集"], "expected_keywords": ["负面", "差评"], "allow_multiple": false },
+  { "id": "sr-011", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "Q4 用户抱怨的问题", "expected_doc_titles": ["2024年Q4负面评论合集"], "expected_keywords": ["负面"], "allow_multiple": false },
+  { "id": "sr-012", "category": "sentiment_reviews", "kb_ids": ["kb-seed-0002-0002-0002-000000000002"], "query": "差评合集", "expected_doc_titles": ["2024年Q4负面评论合集"], "expected_keywords": ["负面", "差评"], "allow_multiple": false },
+
+  { "id": "cx-001", "category": "cross_kb", "query": "MySQL 备份",                "expected_doc_titles": ["MySQL数据库日常运维手册"], "expected_keywords": ["MySQL"], "allow_multiple": false },
+  { "id": "cx-002", "category": "cross_kb", "query": "Redis 报警怎么处理",        "expected_doc_titles": ["Redis缓存运维手册", "平台告警处理SOP"], "expected_keywords": ["Redis", "告警"], "allow_multiple": true },
+  { "id": "cx-003", "category": "cross_kb", "query": "用户满意度",                 "expected_doc_titles": ["2024年Q4正面评论合集"], "expected_keywords": ["正面"], "allow_multiple": false },
+  { "id": "cx-004", "category": "cross_kb", "query": "怎么联系客服退款",           "expected_doc_titles": ["如何联系人工客服？", "退款政策完整说明", "退货退款的流程是什么？"], "expected_keywords": ["客服", "退款"], "allow_multiple": true },
+  { "id": "cx-005", "category": "cross_kb", "query": "差评里关于物流的问题",        "expected_doc_titles": ["2024年Q4负面评论合集", "物流显示签收但没收到怎么办？", "支持哪些快递公司？"], "expected_keywords": ["负面", "物流"], "allow_multiple": true },
+
+  { "id": "ob-001", "category": "out_of_scope", "query": "量子计算与区块链区别",     "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true },
+  { "id": "ob-002", "category": "out_of_scope", "query": "如何烹饪红烧肉",            "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true },
+  { "id": "ob-003", "category": "out_of_scope", "query": "高血压日常用药建议",       "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true },
+  { "id": "ob-004", "category": "out_of_scope", "query": "今天美股大盘走势",         "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true },
+  { "id": "ob-005", "category": "out_of_scope", "query": "推荐周末旅游目的地",       "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true },
+  { "id": "ob-006", "category": "out_of_scope", "query": "怎么用 Photoshop 抠图",   "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true },
+  { "id": "ob-007", "category": "out_of_scope", "query": "Java 和 Python 哪个好学",  "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true },
+  { "id": "ob-008", "category": "out_of_scope", "query": "给我讲个笑话",              "expected_doc_titles": [], "expected_keywords": [], "allow_multiple": false, "expect_no_hit": true }
+]

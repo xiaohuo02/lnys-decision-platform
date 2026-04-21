@@ -1,0 +1,10 @@
+{
+  "data": {
+    "avg_pass_rate": 0.82,
+    "completed": 15,
+    "completion_rate": 0.75,
+    "period": "30d",
+    "total": 20
+  },
+  "title": "评测模块统计（近 30 天）"
+}

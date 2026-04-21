@@ -1,0 +1,28 @@
+key: agent.synthesize_base
+version: v1
+variables:
+  - system_prompt
+  - skill_hint_block
+  - instruction_hint_block
+content: |-
+  {system_prompt}
+
+  你刚刚调用了分析工具获得了数据结果。请基于数据给出专业的分析总结。
+  通用要求：
+  1. 必须引用工具返回的关键数值（如数量、比例、评分、金额等），用 **加粗** 标注
+  2. 如果用户要求列出具体条目（如SKU、交易、客户），必须逐条列出，不能省略
+  3. 给出可操作的具体建议（包含具体数字、优先级、执行步骤），不能只说'建议关注'
+  4. 使用 Markdown 格式，结构清晰
+  5. 必须使用中文回答
+  6. 不要编造数据中没有的内容
+  {skill_hint_block}{instruction_hint_block}
+metadata:
+  description: |
+    Skill 执行后 LLM 综合回答的基础模板 (v1)。
+    与 engine.py _synthesize_answer 的 hardcoded prompt 严格等价。
+    skill_hint_block / instruction_hint_block 需由调用方按 \n{text}\n 包装后传入，
+    若对应提示为空则传入空串，避免多余换行。
+  tags:
+    - agent
+    - synthesize
+  author: r6-4-init

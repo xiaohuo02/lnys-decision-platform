@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "version": "1.0",
+    "created_at": "2026-05-02",
+    "target_agent": "backend.agents.supervisor_agent.SupervisorAgent",
+    "target_methods": ["route (sync, rule-only)", "aroute (async, rule + LLM)"],
+    "route_enum": ["business_overview", "risk_review", "openclaw", "ops_copilot", "unknown"],
+    "keyword_total": 52,
+    "keyword_distribution": {
+      "risk_review": 10,
+      "ops_copilot": 13,
+      "openclaw": 13,
+      "business_overview": 16
+    },
+    "rule_order": ["risk_review", "ops_copilot", "openclaw", "business_overview"],
+    "confidence_formula": "min(0.5 + hits * 0.1, 0.95)",
+    "llm_threshold": 0.6,
+    "fallback_route": "business_overview",
+    "fallback_confidence": 0.3,
+    "design_philosophy": "对标 forge Pico benchmark，4 判定维度：expected_route / expected_level / min_confidence / failure_category。分 5 档覆盖：explicit 2 + rule_strong 9 + rule_weak 2 + llm_or_fallback 3 + adversarial 4 = 20"
+  },
+  "cases": [
+    {
+      "id": "EXP-001",
+      "group": "explicit",
+      "request_text": "帮我做一份本月经营总览",
+      "request_type": "business_overview",
+      "expected_route": "business_overview",
+      "expected_level": "explicit",
+      "min_confidence": 1.0,
+      "category": "explicit_business_overview",
+      "is_adversarial": false,
+      "note": "显式路由：request_type 强制指定，跳过规则层。"
+    },
+    {
+      "id": "EXP-002",
+      "group": "explicit",
+      "request_text": "查一下服务状态",
+      "request_type": "ops_copilot",
+      "expected_route": "ops_copilot",
+      "expected_level": "explicit",
+      "min_confidence": 1.0,
+      "category": "explicit_ops_copilot",
+      "is_adversarial": false,
+      "note": "显式路由：即使 request_text 同时含规则关键词，request_type 优先。"
+    },
+
+    {
+      "id": "BIZ-RULE-001",
+      "group": "rule_strong",
+      "request_text": "查最近一个月的经营分析报告和总览",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "business_overview_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 经营/分析/报告/总览 4 词，conf=0.5+0.1*4=0.9。"
+    },
+    {
+      "id": "BIZ-RULE-002",
+      "group": "rule_strong",
+      "request_text": "做一个客户销售预测的洞察",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "business_overview_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 客户/销售/预测/洞察 4 词，conf=0.9。"
+    },
+    {
+      "id": "BIZ-RULE-003",
+      "group": "rule_strong",
+      "request_text": "舆情分析和库存预警的关联",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "business_overview_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 舆情/分析/库存/关联 4 词，conf=0.9。"
+    },
+    {
+      "id": "BIZ-RULE-004",
+      "group": "rule_strong",
+      "request_text": "关联推荐的分析报告摘要",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "business_overview_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 关联/分析/报告/摘要 4 词，conf=0.9。"
+    },
+    {
+      "id": "OPC-RULE-001",
+      "group": "rule_strong",
+      "request_text": "帮我查这个订单的物流和发货进度",
+      "request_type": null,
+      "expected_route": "openclaw",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "openclaw_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 帮我查/订单/物流/发货 4 词，conf=0.9。"
+    },
+    {
+      "id": "OPC-RULE-002",
+      "group": "rule_strong",
+      "request_text": "这个订单要退货换货找客服",
+      "request_type": null,
+      "expected_route": "openclaw",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "openclaw_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 订单/退货/换货/客服 4 词，conf=0.9。"
+    },
+    {
+      "id": "OPS-RULE-001",
+      "group": "rule_strong",
+      "request_text": "系统状态不健康需要看监控日志",
+      "request_type": null,
+      "expected_route": "ops_copilot",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "ops_copilot_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 系统状态/监控/日志 3 词，conf=0.8。"
+    },
+    {
+      "id": "OPS-RULE-002",
+      "group": "rule_strong",
+      "request_text": "部署后告警持续，trace 诊断显示异常",
+      "request_type": null,
+      "expected_route": "ops_copilot",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.8,
+      "category": "ops_copilot_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 部署/告警/trace/诊断 4 词，conf=0.9。"
+    },
+    {
+      "id": "RSK-RULE-001",
+      "group": "rule_strong",
+      "request_text": "高风险欺诈交易要冻结账户，可疑交易风控",
+      "request_type": null,
+      "expected_route": "risk_review",
+      "expected_level": "rule_strong",
+      "min_confidence": 0.85,
+      "category": "risk_review_multi_keyword",
+      "is_adversarial": false,
+      "note": "命中 高风险/风险/欺诈/冻结/可疑交易/风控 6 词，conf=0.95（上限）。"
+    },
+
+    {
+      "id": "BIZ-WEAK-001",
+      "group": "rule_weak",
+      "request_text": "帮我看一下客户情况",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "rule_weak",
+      "min_confidence": 0.6,
+      "category": "business_overview_single_keyword",
+      "is_adversarial": false,
+      "note": "仅命中 客户 1 词，conf=0.6，等于阈值——aroute() 不会触发 LLM 复查（边界条件）。"
+    },
+    {
+      "id": "OPC-WEAK-001",
+      "group": "rule_weak",
+      "request_text": "订单有点问题怎么弄",
+      "request_type": null,
+      "expected_route": "openclaw",
+      "expected_level": "rule_weak",
+      "min_confidence": 0.6,
+      "category": "openclaw_single_keyword",
+      "is_adversarial": false,
+      "note": "仅命中 订单 1 词，conf=0.6，边界条件。"
+    },
+
+    {
+      "id": "LLM-001",
+      "group": "llm_or_fallback",
+      "request_text": "下个季度怎么调整策略",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "llm_or_fallback",
+      "min_confidence": 0.3,
+      "category": "no_keyword_match",
+      "is_adversarial": false,
+      "note": "0 关键词命中，route() 降级到 business_overview conf=0.3；aroute() 应触发 LLM 分类。"
+    },
+    {
+      "id": "LLM-002",
+      "group": "llm_or_fallback",
+      "request_text": "帮我看看最近公司怎么样",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "llm_or_fallback",
+      "min_confidence": 0.3,
+      "category": "no_keyword_match",
+      "is_adversarial": false,
+      "note": "'帮我看看' 不等于 '帮我查'（完整子串不匹配），0 命中降级。"
+    },
+    {
+      "id": "LLM-003",
+      "group": "llm_or_fallback",
+      "request_text": "最近感觉不太对劲",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "llm_or_fallback",
+      "min_confidence": 0.3,
+      "category": "no_keyword_match",
+      "is_adversarial": false,
+      "note": "模糊描述，0 关键词命中，降级到 business_overview。"
+    },
+
+    {
+      "id": "ADV-001",
+      "group": "adversarial",
+      "request_text": "分析风险投资的回报率",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "adversarial",
+      "min_confidence": 0.6,
+      "category": "adversarial_risk_keyword_in_business_context",
+      "is_adversarial": true,
+      "note": "【对抗】'风险' 是 RISK_REVIEW 关键词，但语义是投资回报分析（business_overview）。规则遍历顺序 RISK 优先，会 false positive 到 risk_review。暴露：1 hit conf=0.6 恰好等于 LLM 阈值，LLM 复查不会触发。"
+    },
+    {
+      "id": "ADV-002",
+      "group": "adversarial",
+      "request_text": "运维团队的 KPI 分析",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "adversarial",
+      "min_confidence": 0.6,
+      "category": "adversarial_ops_keyword_in_business_context",
+      "is_adversarial": true,
+      "note": "【对抗】'运维' 是 OPS_COPILOT 关键词，但语义是人力 KPI 分析（business_overview）。OPS 在遍历顺序第 2 位，会抢在 BUSINESS 之前命中，false positive 到 ops_copilot。"
+    },
+    {
+      "id": "ADV-003",
+      "group": "adversarial",
+      "request_text": "退款数据趋势分析",
+      "request_type": null,
+      "expected_route": "business_overview",
+      "expected_level": "adversarial",
+      "min_confidence": 0.6,
+      "category": "adversarial_risk_keyword_in_business_context",
+      "is_adversarial": true,
+      "note": "【对抗】'退款' 是 RISK_REVIEW 关键词（本意是退款风险），但用户语义是退款数据报表（business_overview）。false positive 到 risk_review。"
+    },
+    {
+      "id": "ADV-004",
+      "group": "adversarial",
+      "request_text": "帮我查客户的退款记录",
+      "request_type": null,
+      "expected_route": "openclaw",
+      "expected_level": "adversarial",
+      "min_confidence": 0.6,
+      "category": "adversarial_risk_keyword_in_customer_service_context",
+      "is_adversarial": true,
+      "note": "【对抗】'帮我查' 命中 OPENCLAW，'客户' 命中 BUSINESS，'退款' 命中 RISK。三方竞争，但 RISK 在遍历顺序最前，会 false positive 到 risk_review。揭示语义污染 + 遍历顺序双重陷阱。"
+    }
+  ]
+}

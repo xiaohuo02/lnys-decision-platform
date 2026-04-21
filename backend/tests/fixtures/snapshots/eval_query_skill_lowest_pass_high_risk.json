@@ -1,0 +1,10 @@
+{
+  "data": {
+    "created_at": "2026-02-10 09:00:00",
+    "experiment_id": "exp-risk",
+    "name": "critical_eval",
+    "pass_rate": 0.45,
+    "risk_level": "high"
+  },
+  "title": "通过率最低的评测 — critical_eval"
+}

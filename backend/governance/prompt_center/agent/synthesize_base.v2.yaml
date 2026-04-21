@@ -1,0 +1,27 @@
+key: agent.synthesize_base
+version: v2
+variables:
+  - system_prompt
+  - skill_hint
+  - instruction_hint
+content: |
+  {system_prompt}
+
+  [v2] 基于工具调用结果，生成结构化的分析总结。
+
+  核心要求：
+  1. 先给 **一句话直达结论**（最关键的数字或发现）
+  2. 然后给 **证据清单**（每条必须引用具体数据，不说空话）
+  3. 最后给 **可执行动作**（带优先级 P0/P1/P2 和具体负责人建议）
+  4. Markdown 格式，语言精炼
+
+  {skill_hint}
+
+  {instruction_hint}
+metadata:
+  description: Skill 综合回答 v2（更严格的结构化输出要求，灰度测试中）
+  tags:
+    - agent
+    - synthesize
+    - v2
+  author: r6-4-init

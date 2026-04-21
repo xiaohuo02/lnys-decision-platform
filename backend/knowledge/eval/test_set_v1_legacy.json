@@ -1,0 +1,165 @@
+[
+  {
+    "id": "q001",
+    "query": "怎么退款",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["退款", "7天", "全额"],
+    "allow_multiple": true,
+    "category": "faq"
+  },
+  {
+    "id": "q002",
+    "query": "配送要多久",
+    "expected_doc_titles": ["配送服务说明"],
+    "expected_keywords": ["配送", "工作日"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q003",
+    "query": "退货怎么操作",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["退货", "7天", "30天"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q004",
+    "query": "VIP有什么好处",
+    "expected_doc_titles": ["会员等级制度与权益"],
+    "expected_keywords": ["VIP", "9折", "免费配送"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q005",
+    "query": "怎么开发票",
+    "expected_doc_titles": [],
+    "expected_keywords": [],
+    "allow_multiple": false,
+    "category": "faq_not_covered",
+    "expect_no_hit": true
+  },
+  {
+    "id": "q006",
+    "query": "退款多久到账",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["退款", "到账", "银行卡"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q007",
+    "query": "我想退货退款",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["退货", "退款"],
+    "allow_multiple": true,
+    "category": "faq"
+  },
+  {
+    "id": "q008",
+    "query": "快递什么时候到",
+    "expected_doc_titles": ["配送服务说明"],
+    "expected_keywords": ["配送", "到达"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q009",
+    "query": "会员打几折",
+    "expected_doc_titles": ["会员等级制度与权益"],
+    "expected_keywords": ["9折", "会员"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q010",
+    "query": "加急快递多少天",
+    "expected_doc_titles": ["配送服务说明"],
+    "expected_keywords": ["次日达", "当日达"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q011",
+    "query": "支付宝退款到账时间",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["支付宝", "即时到账"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q012",
+    "query": "不满意可以退吗",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["退", "退款"],
+    "allow_multiple": true,
+    "category": "faq"
+  },
+  {
+    "id": "q013",
+    "query": "增值税发票",
+    "expected_doc_titles": [],
+    "expected_keywords": [],
+    "allow_multiple": false,
+    "category": "faq_not_covered",
+    "expect_no_hit": true
+  },
+  {
+    "id": "q014",
+    "query": "七天无理由退款",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["7天", "退款"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q015",
+    "query": "会员有免运费吗",
+    "expected_doc_titles": ["会员等级制度与权益"],
+    "expected_keywords": ["免费退换货运费", "会员"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q016",
+    "query": "物流太慢了",
+    "expected_doc_titles": ["配送服务说明"],
+    "expected_keywords": ["配送", "工作日"],
+    "allow_multiple": false,
+    "category": "complaint"
+  },
+  {
+    "id": "q017",
+    "query": "退款被拒绝了怎么办",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["退款", "联系客服"],
+    "allow_multiple": true,
+    "category": "complaint"
+  },
+  {
+    "id": "q018",
+    "query": "包裹签收后还能退吗",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["签收", "7天"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q019",
+    "query": "银行卡退款几天",
+    "expected_doc_titles": ["退款政策完整说明"],
+    "expected_keywords": ["银行卡", "3-7个工作日"],
+    "allow_multiple": false,
+    "category": "faq"
+  },
+  {
+    "id": "q020",
+    "query": "量子计算和区块链",
+    "expected_doc_titles": [],
+    "expected_keywords": [],
+    "allow_multiple": false,
+    "category": "irrelevant",
+    "expect_no_hit": true
+  }
+]

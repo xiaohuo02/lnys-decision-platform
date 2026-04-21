@@ -1,0 +1,17 @@
+key: agent.general_chat
+version: v1
+variables:
+  - system_prompt
+  - user_question
+content: |
+  {system_prompt}
+
+  请回答用户的问题。使用中文，使用 Markdown 格式，保持专业、简洁。
+
+  用户问题: {user_question}
+metadata:
+  description: 无 Skill 匹配时的通用对话 system prompt
+  tags:
+    - agent
+    - general_chat
+  author: r6-4-init
