@@ -1,0 +1,63 @@
+{
+  "run_id": "run_20260402_001",
+  "workflow_name": "business_overview",
+  "status": "completed",
+  "started_at": "2026-04-02T10:15:00Z",
+  "ended_at": "2026-04-02T10:15:15Z",
+  "latency_ms": 15200,
+  "total_tokens": 1850,
+  "total_cost": 0.12,
+  "request_text": "帮我分析一下最近的经营状况",
+  "executive_summary": "本次经营分析显示整体运营承压：销售预测环比下降3.2%，反映短期增长动能减弱；客户层面呈现结构性风险——高流失客户集中于"低频高价值"群体，说明核心付费用户活跃度持续下滑，复购意愿不足；舆情端负面声量达12.3%，聚焦物流延误与产品品质两大痛点，已形成口碑传导压力；风控侧虽暂无重大异常，但3笔高风险交易需人工介入。多维度信号交叉印证：服务交付能力已成为当前客户留存与销售转化的关键瓶颈。",
+  "risk_highlights": "- 高价值客户活跃度持续走低，若未及时干预，可能引发LTV下滑与口碑负向扩散；\n- 物流与品质问题集中爆发，叠加销售淡势，易加剧客户流失与差评循环；\n- 高风险交易虽数量少，但集中在特定时段/渠道，存在局部风控规则失效隐患。",
+  "action_plan": "1. 立即启动高价值客户专属唤醒计划，推送限时专属权益+物流进度主动告知服务；\n2. 48小时内联合物流与品控部门输出近期客诉根因速报，同步制定7日改善承诺公示；\n3. 对预测下滑品类开展动态库存调拨与精准促销测试；\n4. 对高风险交易涉及的渠道、设备指纹聚类开展专项复盘，2个工作日内优化自动审核阈值；\n5. 将RFM分群结果同步至销售预测模型特征集，提升下期预测对客户行为异动的敏感度。",
+  "model_used": "qwen-plus",
+  "node_timings": {
+    "data_preparation": 2.1,
+    "customer_intel": 0.8,
+    "sales_forecast": 0.5,
+    "sentiment_intel": 3.2,
+    "fraud_scoring": 1.1,
+    "inventory": 2.5,
+    "insight_composer": 5.0
+  },
+  "artifact_refs": [
+    {
+      "artifact_id": "art_cust_001",
+      "artifact_type": "customer_insight",
+      "summary": "高流失客户 Top10，RFM 分布集中在低频高价值群",
+      "created_at": "2026-04-02T10:15:03Z"
+    },
+    {
+      "artifact_id": "art_fcst_001",
+      "artifact_type": "forecast",
+      "summary": "未来 30 天销售预测，Stacking 模型，环比下降 3.2%",
+      "created_at": "2026-04-02T10:15:04Z"
+    },
+    {
+      "artifact_id": "art_sent_001",
+      "artifact_type": "sentiment",
+      "summary": "近 7 天负面评价占比 12.3%，主题：物流延误、品质投诉",
+      "created_at": "2026-04-02T10:15:07Z"
+    },
+    {
+      "artifact_id": "art_frau_001",
+      "artifact_type": "fraud_score",
+      "summary": "高风险交易 3 笔，待人工审核；中风险 17 笔，已自动标记",
+      "created_at": "2026-04-02T10:15:08Z"
+    },
+    {
+      "artifact_id": "art_inv_001",
+      "artifact_type": "inventory",
+      "summary": "紧急补货 SKU 23 个，总建议采购金额 ¥185,000",
+      "created_at": "2026-04-02T10:15:10Z"
+    },
+    {
+      "artifact_id": "art_rpt_001",
+      "artifact_type": "report",
+      "summary": "经营总览报告 (Markdown)",
+      "uri": "/artifact_store/reports/run_20260402_001_business_overview.md",
+      "created_at": "2026-04-02T10:15:15Z"
+    }
+  ]
+}

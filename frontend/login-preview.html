@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>柠优生活数据中台 - 登录</title>
+<style>
+  :root {
+    --bg-page: #f5f5f5;
+    --bg-white: #ffffff;
+    --bg-hover: #fafafa;
+
+    --text-main: #18181b;
+    --text-muted: #71717a;
+    --text-placeholder: #a1a1aa;
+
+    --border-color: #e4e4e7;
+    --border-hover: #a1a1aa;
+    --border-focus: #18181b;
+
+    --btn-bg: #18181b;
+    --btn-hover: #27272a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    zoom: 1.2;
+  }
+
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    height: calc(100vh / 1.2);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ 布局：左侧自适应 + 右侧固定宽度 ============ */
+  .layout {
+    display: flex;
+    height: 100%;
+  }
+
+  /* 左侧品牌区：自动占满剩余宽度 */
+  .brand-side {
+    flex: 1;
+    background-color: var(--bg-page);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 极淡的点阵背景纹理 */
+  .brand-side::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #d4d4d8 0.8px, transparent 0.8px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    mask-image: linear-gradient(to bottom right, black 30%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to bottom right, black 30%, transparent 80%);
+    pointer-events: none;
+  }
+
+  .brand-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    z-index: 1;
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--text-main);
+    color: var(--bg-white);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .brand-center {
+    z-index: 1;
+  }
+
+  .brand-center h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .brand-center h1 span {
+    color: var(--text-muted);
+  }
+
+  .brand-center p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 420px;
+  }
+
+  /* 三个特色功能标签 */
+  .brand-tags {
+    margin-top: 36px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    z-index: 1;
+  }
+
+  .brand-tag {
+    padding: 8px 16px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .brand-tag svg {
+    color: var(--text-main);
+  }
+
+  .brand-bottom {
+    z-index: 1;
+    font-size: 13px;
+    color: var(--text-placeholder);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-bottom::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: block;
+  }
+
+  /* ============ 右侧表单面板：固定 480px ============ */
+  .form-side {
+    width: 480px;
+    flex-shrink: 0;
+    background-color: var(--bg-white);
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 48px;
+    overflow-y: auto;
+  }
+
+  .form-header {
+    margin-bottom: 36px;
+  }
+
+  .form-header h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .form-header p {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .form-header p a {
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+
+  .form-header p a:hover {
+    border-color: var(--text-main);
+  }
+
+  /* 翻转动画 */
+  .form-slider { position: relative; }
+
+  .form-pane {
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .form-pane.hidden-left {
+    opacity: 0; transform: translateX(-16px);
+    position: absolute; top: 0; pointer-events: none;
+  }
+
+  .form-pane.hidden-right {
+    opacity: 0; transform: translateX(16px);
+    position: absolute; top: 0; pointer-events: none;
+  }
+
+  .form-pane.active {
+    opacity: 1; transform: translateX(0); position: relative;
+  }
+
+  /* 输入框 */
+  .input-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .input-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-main);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-main);
+    font-family: inherit;
+    outline: none;
+    transition: all 0.15s;
+    background: var(--bg-white);
+  }
+
+  .input-field::placeholder { color: var(--text-placeholder); }
+  .input-field:hover { border-color: var(--border-hover); }
+  .input-field:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 1px var(--border-focus);
+  }
+
+  .pwd-toggle {
+    position: absolute; right: 12px; top: 38px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text-placeholder); display: flex;
+  }
+  .pwd-toggle:hover { color: var(--text-main); }
+
+  .account-hint {
+    margin-top: 8px; font-size: 13px; color: var(--text-muted);
+  }
+  .account-hint .val {
+    color: var(--text-main); font-weight: 600;
+    font-family: Consolas, "Courier New", monospace;
+  }
+
+  .notice-box {
+    margin-top: 16px; padding: 12px 14px;
+    background: var(--bg-hover); border: 1px solid var(--border-color);
+    border-radius: 8px; font-size: 13px; color: var(--text-muted);
+    line-height: 1.7; display: flex; gap: 10px;
+  }
+  .notice-box svg { flex-shrink: 0; margin-top: 2px; color: var(--text-main); }
+
+  /* 按钮 */
+  .submit-btn {
+    width: 100%; padding: 14px; margin-top: 24px;
+    background: var(--btn-bg); color: #fff; border: none;
+    border-radius: 8px; font-size: 15px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    transition: background 0.15s, transform 0.1s;
+    display: flex; justify-content: center; align-items: center; gap: 8px;
+  }
+  .submit-btn:hover { background: var(--btn-hover); }
+  .submit-btn:active { transform: scale(0.98); }
+
+  /* 底部辅助 */
+  .form-footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-placeholder);
+  }
+
+  @media (max-width: 900px) {
+    .layout { flex-direction: column; }
+    .brand-side { padding: 32px; }
+    .brand-center h1 { font-size: 28px; }
+    .form-side { width: 100%; padding: 32px 24px; border-left: none; border-top: 1px solid var(--border-color); }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- 左侧品牌区 -->
+  <div class="brand-side">
+    <div class="brand-top">
+      <div class="logo-icon">柠</div>
+      柠优生活数据中台
+    </div>
+
+    <div class="brand-center">
+      <h1>精准洞察。<br><span>极简协同。</span></h1>
+      <p>企业级大数据智能决策平台，专注于数据资产沉淀与 AI 辅助分析。为您屏蔽繁杂的噪音，直达最核心的业务信号与结论。</p>
+
+      <div class="brand-tags">
+        <div class="brand-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          多维数据分析
+        </div>
+        <div class="brand-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          AI 决策助手
+        </div>
+        <div class="brand-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          企业级安全
+        </div>
+        <div class="brand-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          全链路追踪
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-bottom">系统版本 v5.0.0 · 内置 AI Copilot</div>
+  </div>
+
+  <!-- 右侧表单（固定 480px 宽） -->
+  <div class="form-side">
+    <div class="form-header">
+      <h2 id="mainTitle">欢迎登录</h2>
+      <p id="mainSubtitle">首次使用？ <a onclick="switchMode('register')">申请员工账号</a></p>
+    </div>
+
+    <div class="form-slider">
+
+      <!-- 登录 -->
+      <div class="form-pane active" id="loginPane">
+        <div class="input-group">
+          <label class="input-label">系统账号</label>
+          <input type="text" class="input-field" placeholder="请输入账号" autocomplete="username">
+        </div>
+        <div class="input-group">
+          <label class="input-label">密码</label>
+          <input type="password" class="input-field" id="loginPwd" placeholder="请输入密码" autocomplete="current-password">
+          <button class="pwd-toggle" onclick="togglePwd('loginPwd')" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <button class="submit-btn" onclick="doSubmit('login',event)">
+          进入工作台
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- 注册 -->
+      <div class="form-pane hidden-right" id="registerPane">
+        <div class="input-group">
+          <label class="input-label">真实姓名</label>
+          <input type="text" class="input-field" id="regName" placeholder="请输入真实姓名" oninput="updatePreview()">
+          <div class="account-hint">自动生成账号：<span class="val" id="acctPreview">—</span></div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">设置密码</label>
+          <input type="password" class="input-field" id="regPwd" placeholder="请设置登录密码">
+          <button class="pwd-toggle" onclick="togglePwd('regPwd')" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div class="input-group">
+          <label class="input-label">企业授权码</label>
+          <input type="text" class="input-field" placeholder="请输入管理员提供的授权码">
+        </div>
+        <div class="notice-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div>注册后默认为 <b>员工角色</b>，仅可进入业务空间查看数据。管理员授权后开放操作权限。</div>
+        </div>
+        <button class="submit-btn" onclick="doSubmit('register',event)">提交注册申请</button>
+      </div>
+
+    </div>
+
+    <div class="form-footer">
+      登录即同意《服务条款》与《隐私政策》
+    </div>
+  </div>
+
+</div>
+
+<script>
+const py = {'张':'zhang','王':'wang','李':'li','赵':'zhao','刘':'liu','陈':'chen','杨':'yang','黄':'huang','周':'zhou','吴':'wu','徐':'xu','孙':'sun','马':'ma','朱':'zhu','胡':'hu','郭':'guo','何':'he','林':'lin','罗':'luo','高':'gao','郑':'zheng'};
+function updatePreview(){const n=document.getElementById('regName').value.trim(),p=document.getElementById('acctPreview');if(!n){p.textContent='—';return}let r='';for(let c of n){r+=py[c]||(/[a-zA-Z]/.test(c)?c.toLowerCase():'x')}p.textContent=r}
+function togglePwd(id){const i=document.getElementById(id);i.type=i.type==='password'?'text':'password'}
+function switchMode(m){const l=document.getElementById('loginPane'),r=document.getElementById('registerPane'),t=document.getElementById('mainTitle'),s=document.getElementById('mainSubtitle');if(m==='register'){l.className='form-pane hidden-left';r.className='form-pane active';t.textContent='申请员工账号';s.innerHTML='已有账号？ <a onclick="switchMode(\'login\')">返回登录</a>'}else{r.className='form-pane hidden-right';l.className='form-pane active';t.textContent='欢迎登录';s.innerHTML='首次使用？ <a onclick="switchMode(\'register\')">申请员工账号</a>'}}
+function doSubmit(t,e){const b=e.currentTarget,o=b.innerHTML;b.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> 处理中...';setTimeout(()=>{b.innerHTML=o;if(t==='register'){alert('注册申请已提交，当前为只读模式，请等待管理员审核。');switchMode('login')}else{alert('登录成功')}},800)}
+</script>
+<style>@keyframes spin{100%{transform:rotate(360deg)}}</style>
+</body>
+</html>

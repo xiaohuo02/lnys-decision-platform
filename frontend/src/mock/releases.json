@@ -1,0 +1,38 @@
+{
+  "total": 3,
+  "items": [
+    {
+      "release_id": "rel_001",
+      "version": "1.0.0",
+      "status": "deployed",
+      "release_type": "prompt",
+      "target": "SupervisorAgent 意图分类 Prompt",
+      "deployed_at": "2026-04-01T09:00:00Z",
+      "deployed_by": "agent_lead",
+      "changelog": "初始版本：规则路由 + LLM 兜底分类",
+      "rollback_available": true
+    },
+    {
+      "release_id": "rel_002",
+      "version": "1.0.0",
+      "status": "deployed",
+      "release_type": "prompt",
+      "target": "InsightComposer 洞察合成 Prompt",
+      "deployed_at": "2026-04-01T09:30:00Z",
+      "deployed_by": "agent_lead",
+      "changelog": "初始版本：分段格式输出，支持 qwen-plus",
+      "rollback_available": true
+    },
+    {
+      "release_id": "rel_003",
+      "version": "2.1.0",
+      "status": "pending_review",
+      "release_type": "policy",
+      "target": "欺诈评分阈值 Policy",
+      "created_at": "2026-04-02T08:00:00Z",
+      "created_by": "agent_lead",
+      "changelog": "调整高风险阈值从 0.85 降至 0.80，增加 HITL 覆盖面",
+      "rollback_available": false
+    }
+  ]
+}

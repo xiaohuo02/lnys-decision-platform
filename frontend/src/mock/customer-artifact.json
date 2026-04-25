@@ -1,0 +1,98 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "art_cust_001",
+      "artifact_type": "customer_insight",
+      "run_id": "run_20260402_001",
+      "created_at": "2026-04-02T10:15:03Z",
+      "summary": "高流失客户 Top10，RFM 分布集中在低频高价值群",
+      "data": {
+        "rfm_total": 5852,
+        "churn_high_risk": 2153,
+        "top_churn_customers": [
+          {"customer_id": "C001", "rfm_segment": "低频高价值", "churn_prob": 0.92, "ltv": 15800},
+          {"customer_id": "C002", "rfm_segment": "低频高价值", "churn_prob": 0.88, "ltv": 12300},
+          {"customer_id": "C003", "rfm_segment": "低频中价值", "churn_prob": 0.85, "ltv": 8700}
+        ]
+      }
+    },
+    {
+      "artifact_id": "art_fcst_001",
+      "artifact_type": "forecast",
+      "run_id": "run_20260402_001",
+      "created_at": "2026-04-02T10:15:04Z",
+      "summary": "未来 30 天销售预测，Stacking 模型，环比下降 3.2%",
+      "data": {
+        "model": "xgb",
+        "forecast_days": 30,
+        "total_forecast": 6510032.06,
+        "change_pct": -3.2,
+        "daily_forecast": [
+          {"date": "2026-04-03", "amount": 218000},
+          {"date": "2026-04-04", "amount": 205000},
+          {"date": "2026-04-05", "amount": 198000}
+        ]
+      }
+    },
+    {
+      "artifact_id": "art_sent_001",
+      "artifact_type": "sentiment",
+      "run_id": "run_20260402_001",
+      "created_at": "2026-04-02T10:15:07Z",
+      "summary": "近 7 天负面评价占比 12.3%，主题：物流延误、品质投诉",
+      "data": {
+        "total_reviews": 1580,
+        "negative_ratio": 0.123,
+        "top_negative_topics": ["物流延误", "产品品质", "包装破损"],
+        "sentiment_trend": [
+          {"date": "2026-03-27", "negative_pct": 0.10},
+          {"date": "2026-03-28", "negative_pct": 0.11},
+          {"date": "2026-03-29", "negative_pct": 0.09},
+          {"date": "2026-03-30", "negative_pct": 0.13},
+          {"date": "2026-03-31", "negative_pct": 0.14},
+          {"date": "2026-04-01", "negative_pct": 0.12},
+          {"date": "2026-04-02", "negative_pct": 0.12}
+        ]
+      }
+    },
+    {
+      "artifact_id": "art_frau_001",
+      "artifact_type": "fraud_score",
+      "run_id": "run_20260402_001",
+      "created_at": "2026-04-02T10:15:08Z",
+      "summary": "高风险交易 3 笔，待人工审核；中风险 17 笔，已自动标记",
+      "data": {
+        "total_scored": 1250,
+        "high_risk": 3,
+        "medium_risk": 17,
+        "low_risk": 1230,
+        "hitl_pending": 3
+      }
+    },
+    {
+      "artifact_id": "art_inv_001",
+      "artifact_type": "inventory",
+      "run_id": "run_20260402_001",
+      "created_at": "2026-04-02T10:15:10Z",
+      "summary": "紧急补货 SKU 23 个，总建议采购金额 ¥185,000",
+      "data": {
+        "total_skus": 153920,
+        "urgent_reorder": 23,
+        "total_reorder_amount": 185000,
+        "top_urgent": [
+          {"sku": "SKU-10021", "name": "蓝牙耳机 Pro", "current_stock": 12, "daily_sales": 45},
+          {"sku": "SKU-10089", "name": "手机壳套装", "current_stock": 8, "daily_sales": 30},
+          {"sku": "SKU-10155", "name": "USB-C 数据线", "current_stock": 15, "daily_sales": 52}
+        ]
+      }
+    },
+    {
+      "artifact_id": "art_rpt_001",
+      "artifact_type": "report",
+      "run_id": "run_20260402_001",
+      "created_at": "2026-04-02T10:15:15Z",
+      "summary": "经营总览报告 (Markdown)",
+      "uri": "/artifact_store/reports/run_20260402_001_business_overview.md"
+    }
+  ]
+}

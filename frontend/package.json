@@ -1,0 +1,36 @@
+{
+  "name": "lnys-frontend",
+  "version": "1.0.0",
+  "description": "柠优生活大数据智能决策平台 · 前端",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@antv/g6": "^4.8.25",
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueuse/core": "^14.2.1",
+    "@vueuse/motion": "^3.0.3",
+    "axios": "^1.6.8",
+    "d3": "^7.9.0",
+    "echarts": "^5.5.0",
+    "element-plus": "^2.6.3",
+    "geist": "^1.7.0",
+    "lucide-vue-next": "^1.0.0",
+    "markdown-it": "^14.1.1",
+    "pinia": "^2.1.7",
+    "shiki": "^4.0.2",
+    "vue": "^3.4.0",
+    "vue-echarts": "^6.6.8",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/compiler-sfc": "^3.5.32",
+    "unplugin-icons": "^23.0.1",
+    "unplugin-vue-components": "^32.0.0",
+    "vite": "^5.2.0"
+  }
+}

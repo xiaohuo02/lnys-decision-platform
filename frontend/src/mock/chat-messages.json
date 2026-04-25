@@ -1,0 +1,34 @@
+{
+  "thread_id": "thread_openclaw_001",
+  "workflow": "openclaw",
+  "messages": [
+    {
+      "role": "user",
+      "content": "帮我查一下订单 ORD-88921 的物流到哪了",
+      "timestamp": "2026-04-02T10:35:00Z"
+    },
+    {
+      "role": "assistant",
+      "content": "正在为您查询订单 ORD-88921 的物流信息...",
+      "timestamp": "2026-04-02T10:35:01Z",
+      "tool_calls": [
+        {"tool": "OrderQueryTool", "input": {"order_id": "ORD-88921"}, "status": "completed"}
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "您的订单 ORD-88921 目前状态如下：\n\n📦 **商品**: 蓝牙耳机 Pro Max × 1\n💰 **金额**: ¥299.00\n🚚 **物流**: 顺丰速运 SF1234567890\n📍 **当前位置**: 杭州转运中心\n⏰ **预计送达**: 2026-04-03 下午\n\n包裹已从深圳发出，目前在杭州转运中心，预计明天下午送达。需要我帮您做其他查询吗？",
+      "timestamp": "2026-04-02T10:35:03Z"
+    },
+    {
+      "role": "user",
+      "content": "能不能帮我改一下收货地址",
+      "timestamp": "2026-04-02T10:35:30Z"
+    },
+    {
+      "role": "assistant",
+      "content": "抱歉，由于您的包裹已经在运输途中，我无法直接修改收货地址。建议您：\n\n1. 联系顺丰客服热线 **95338**，提供运单号 SF1234567890 申请改址\n2. 或在顺丰小程序中自助操作「在途改址」\n\n如果需要其他帮助，随时告诉我！",
+      "timestamp": "2026-04-02T10:35:32Z"
+    }
+  ]
+}

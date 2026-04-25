@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "workflow_name": "business_overview",
+      "display_name": "经营总览分析",
+      "description": "多维度经营数据分析，生成管理层洞察报告",
+      "version": "1.0.0",
+      "status": "active",
+      "nodes": ["data_preparation", "customer_intel", "sales_forecast", "sentiment_intel", "fraud_scoring", "inventory", "insight_composer"],
+      "avg_latency_ms": 15200,
+      "total_runs": 28,
+      "success_rate": 0.89,
+      "last_run_at": "2026-04-02T10:15:00Z"
+    },
+    {
+      "workflow_name": "risk_review",
+      "display_name": "高风险交易审核",
+      "description": "欺诈评分 + 规则匹配 + HITL 人工审核",
+      "version": "1.0.0",
+      "status": "active",
+      "nodes": ["data_enrichment", "fraud_scoring", "rule_matching", "hitl_gate"],
+      "avg_latency_ms": 8700,
+      "total_runs": 9,
+      "success_rate": 0.95,
+      "last_run_at": "2026-04-02T10:22:00Z"
+    },
+    {
+      "workflow_name": "openclaw",
+      "display_name": "OpenClaw 客服会话",
+      "description": "智能客服多轮对话，支持订单/物流/售后查询",
+      "version": "1.0.0",
+      "status": "active",
+      "nodes": ["intent_recognition", "knowledge_retrieval", "response_generation"],
+      "avg_latency_ms": 3500,
+      "total_runs": 7,
+      "success_rate": 0.92,
+      "last_run_at": "2026-04-02T10:35:00Z"
+    },
+    {
+      "workflow_name": "ops_copilot",
+      "display_name": "运维 Copilot",
+      "description": "系统监控、日志分析、Trace 诊断",
+      "version": "0.9.0",
+      "status": "beta",
+      "nodes": ["metric_collector", "log_analyzer", "diagnosis_engine"],
+      "avg_latency_ms": 6200,
+      "total_runs": 3,
+      "success_rate": 0.67,
+      "last_run_at": "2026-04-02T09:10:00Z"
+    }
+  ]
+}

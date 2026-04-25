@@ -1,0 +1,75 @@
+{
+  "kpi": {
+    "total_runs_today": 47,
+    "success_rate": 0.894,
+    "avg_latency_ms": 12300,
+    "total_tokens_today": 185400,
+    "total_cost_today": 2.35,
+    "active_workflows": 3,
+    "pending_reviews": 5,
+    "guardrail_blocks_today": 12
+  },
+  "recent_runs": [
+    {
+      "run_id": "run_20260402_001",
+      "workflow_name": "business_overview",
+      "status": "completed",
+      "started_at": "2026-04-02T10:15:00Z",
+      "latency_ms": 15200,
+      "total_tokens": 1850,
+      "request_text": "帮我分析一下最近的经营状况"
+    },
+    {
+      "run_id": "run_20260402_002",
+      "workflow_name": "risk_review",
+      "status": "completed",
+      "started_at": "2026-04-02T10:22:00Z",
+      "latency_ms": 8700,
+      "total_tokens": 920,
+      "request_text": "审核高风险交易 TXN-2026040201"
+    },
+    {
+      "run_id": "run_20260402_003",
+      "workflow_name": "business_overview",
+      "status": "failed",
+      "started_at": "2026-04-02T10:30:00Z",
+      "latency_ms": 5100,
+      "total_tokens": 450,
+      "error": "SentimentService timeout",
+      "request_text": "生成本周销售报告"
+    },
+    {
+      "run_id": "run_20260402_004",
+      "workflow_name": "openclaw",
+      "status": "running",
+      "started_at": "2026-04-02T10:35:00Z",
+      "latency_ms": null,
+      "total_tokens": 320,
+      "request_text": "查一下订单 ORD-88921 的物流"
+    },
+    {
+      "run_id": "run_20260402_005",
+      "workflow_name": "business_overview",
+      "status": "completed",
+      "started_at": "2026-04-02T09:50:00Z",
+      "latency_ms": 22400,
+      "total_tokens": 2100,
+      "request_text": "做一份完整的经营洞察报告"
+    }
+  ],
+  "workflow_distribution": {
+    "business_overview": 28,
+    "risk_review": 9,
+    "openclaw": 7,
+    "ops_copilot": 3
+  },
+  "hourly_runs": [
+    {"hour": "08:00", "count": 3, "success": 3},
+    {"hour": "09:00", "count": 8, "success": 7},
+    {"hour": "10:00", "count": 12, "success": 10},
+    {"hour": "11:00", "count": 9, "success": 8},
+    {"hour": "12:00", "count": 4, "success": 4},
+    {"hour": "13:00", "count": 6, "success": 6},
+    {"hour": "14:00", "count": 5, "success": 5}
+  ]
+}

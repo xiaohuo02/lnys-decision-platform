@@ -1,0 +1,77 @@
+{
+  "total": 6,
+  "items": [
+    {
+      "prompt_id": "prompt_supervisor_classify",
+      "name": "SupervisorAgent 意图分类",
+      "agent_name": "SupervisorAgent",
+      "status": "active",
+      "current_version": "1.0.0",
+      "template_preview": "你是一个请求路由分类器。根据用户输入，判断应该路由到哪个工作流...",
+      "variables": ["user_input"],
+      "token_estimate": 180,
+      "updated_at": "2026-04-01T09:00:00Z",
+      "updated_by": "agent_lead"
+    },
+    {
+      "prompt_id": "prompt_insight_compose",
+      "name": "InsightComposer 洞察合成",
+      "agent_name": "InsightComposerAgent",
+      "status": "active",
+      "current_version": "1.0.0",
+      "template_preview": "你是一个专业的经营分析顾问。根据提供的多维度分析摘要，生成结构化的经营洞察报告...",
+      "variables": ["artifact_summaries"],
+      "token_estimate": 450,
+      "updated_at": "2026-04-01T09:00:00Z",
+      "updated_by": "agent_lead"
+    },
+    {
+      "prompt_id": "prompt_openclaw_system",
+      "name": "OpenClaw 客服系统提示",
+      "agent_name": "OpenClawAgent",
+      "status": "active",
+      "current_version": "1.1.0",
+      "template_preview": "你是柠优生活平台的智能客服助手。你可以帮用户查询订单、物流、处理售后问题...",
+      "variables": ["customer_context", "order_context"],
+      "token_estimate": 320,
+      "updated_at": "2026-03-28T14:00:00Z",
+      "updated_by": "agent_lead"
+    },
+    {
+      "prompt_id": "prompt_fraud_explain",
+      "name": "欺诈评分解释",
+      "agent_name": "FraudScoringService",
+      "status": "draft",
+      "current_version": "0.1.0",
+      "template_preview": "根据以下风险信号，用中文简要解释为什么这笔交易被标记为高风险...",
+      "variables": ["risk_signals", "transaction_info"],
+      "token_estimate": 200,
+      "updated_at": "2026-04-02T08:00:00Z",
+      "updated_by": "agent_lead"
+    },
+    {
+      "prompt_id": "prompt_ops_diagnosis",
+      "name": "OpsCopilot 诊断提示",
+      "agent_name": "OpsCopilotAgent",
+      "status": "draft",
+      "current_version": "0.1.0",
+      "template_preview": "你是平台运维助手。根据提供的系统指标和日志片段，分析可能的问题根因...",
+      "variables": ["metrics", "log_entries"],
+      "token_estimate": 280,
+      "updated_at": "2026-04-02T08:00:00Z",
+      "updated_by": "agent_lead"
+    },
+    {
+      "prompt_id": "prompt_sentiment_summary",
+      "name": "舆情摘要生成",
+      "agent_name": "SentimentIntelligenceService",
+      "status": "active",
+      "current_version": "1.0.0",
+      "template_preview": "根据以下评论文本的情感分析结果，生成一段中文舆情摘要...",
+      "variables": ["sentiment_stats", "top_topics"],
+      "token_estimate": 250,
+      "updated_at": "2026-03-30T16:00:00Z",
+      "updated_by": "agent_lead"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "total": 5,
+  "page": 1,
+  "page_size": 20,
+  "items": [
+    {
+      "case_id": "rev_001",
+      "review_type": "fraud_hitl",
+      "status": "pending",
+      "priority": "high",
+      "title": "高风险交易 TXN-2026040201 需人工审核",
+      "run_id": "run_20260402_001",
+      "agent_name": "FraudScoringService",
+      "created_at": "2026-04-02T10:15:08Z",
+      "auto_score": 0.87,
+      "summary": "交易金额 ¥52,000，IP 地址与常用设备不一致，收货地址为新地址"
+    },
+    {
+      "case_id": "rev_002",
+      "review_type": "fraud_hitl",
+      "status": "pending",
+      "priority": "high",
+      "title": "高风险交易 TXN-2026040215 需人工审核",
+      "run_id": "run_20260402_001",
+      "agent_name": "FraudScoringService",
+      "created_at": "2026-04-02T10:15:08Z",
+      "auto_score": 0.92,
+      "summary": "短时间内连续 3 笔大额交易，总金额 ¥128,000"
+    },
+    {
+      "case_id": "rev_003",
+      "review_type": "fraud_hitl",
+      "status": "approved",
+      "priority": "medium",
+      "title": "中风险交易 TXN-2026040108 已审核",
+      "run_id": "run_20260401_015",
+      "agent_name": "FraudScoringService",
+      "created_at": "2026-04-01T16:30:00Z",
+      "resolved_at": "2026-04-01T17:15:00Z",
+      "resolved_by": "admin",
+      "auto_score": 0.65,
+      "summary": "交易金额正常但使用了新支付渠道",
+      "action": "approve",
+      "action_note": "已与客户电话确认为本人操作"
+    },
+    {
+      "case_id": "rev_004",
+      "review_type": "content_review",
+      "status": "rejected",
+      "priority": "low",
+      "title": "报告内容审核 - 周报 2026-W13",
+      "run_id": "run_20260401_020",
+      "agent_name": "InsightComposerAgent",
+      "created_at": "2026-04-01T14:00:00Z",
+      "resolved_at": "2026-04-01T14:30:00Z",
+      "resolved_by": "admin",
+      "summary": "InsightComposer 生成的报告中包含敏感竞品对比数据",
+      "action": "reject",
+      "action_note": "请去除竞品名称后重新生成"
+    },
+    {
+      "case_id": "rev_005",
+      "review_type": "fraud_hitl",
+      "status": "pending",
+      "priority": "high",
+      "title": "高风险交易 TXN-2026040222 需人工审核",
+      "run_id": "run_20260402_001",
+      "agent_name": "FraudScoringService",
+      "created_at": "2026-04-02T10:15:08Z",
+      "auto_score": 0.81,
+      "summary": "账户近 24 小时内登录 IP 变更 4 次，且交易金额超过历史均值 3 倍"
+    }
+  ]
+}

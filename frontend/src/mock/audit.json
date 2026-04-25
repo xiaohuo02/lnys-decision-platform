@@ -1,0 +1,71 @@
+{
+  "total": 8,
+  "page": 1,
+  "page_size": 20,
+  "items": [
+    {
+      "audit_id": "aud_001",
+      "action": "workflow_completed",
+      "actor": "system",
+      "target": "run_20260402_001",
+      "timestamp": "2026-04-02T10:15:15Z",
+      "detail": "business_overview workflow 完成，耗时 15.2s，模型 qwen-plus"
+    },
+    {
+      "audit_id": "aud_002",
+      "action": "guardrail_block",
+      "actor": "InputGuard",
+      "target": "run_20260402_006",
+      "timestamp": "2026-04-02T10:40:00Z",
+      "detail": "检测到提示词注入攻击，已拦截"
+    },
+    {
+      "audit_id": "aud_003",
+      "action": "hitl_created",
+      "actor": "FraudScoringService",
+      "target": "rev_002",
+      "timestamp": "2026-04-02T10:15:08Z",
+      "detail": "高风险交易 TXN-2026040215 (score=0.92) 进入 HITL 队列"
+    },
+    {
+      "audit_id": "aud_004",
+      "action": "hitl_resolved",
+      "actor": "admin",
+      "target": "rev_003",
+      "timestamp": "2026-04-01T17:15:00Z",
+      "detail": "中风险交易 TXN-2026040108 审核通过，备注: 已与客户确认"
+    },
+    {
+      "audit_id": "aud_005",
+      "action": "prompt_deployed",
+      "actor": "agent_lead",
+      "target": "prompt_supervisor_classify v1.0.0",
+      "timestamp": "2026-04-01T09:00:00Z",
+      "detail": "SupervisorAgent 意图分类 Prompt 发布上线"
+    },
+    {
+      "audit_id": "aud_006",
+      "action": "pii_masked",
+      "actor": "InputGuard",
+      "target": "run_20260402_007",
+      "timestamp": "2026-04-02T11:02:00Z",
+      "detail": "用户输入包含手机号，已自动脱敏 138****5678"
+    },
+    {
+      "audit_id": "aud_007",
+      "action": "workflow_failed",
+      "actor": "system",
+      "target": "run_20260402_003",
+      "timestamp": "2026-04-02T10:30:05Z",
+      "detail": "business_overview workflow 失败: SentimentService timeout after 30s"
+    },
+    {
+      "audit_id": "aud_008",
+      "action": "llm_fallback",
+      "actor": "InsightComposerAgent",
+      "target": "run_20260402_008",
+      "timestamp": "2026-04-02T11:20:00Z",
+      "detail": "LLM 调用超时，降级到模板 fallback"
+    }
+  ]
+}

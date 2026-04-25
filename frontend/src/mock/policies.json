@@ -1,0 +1,49 @@
+{
+  "total": 4,
+  "items": [
+    {
+      "policy_id": "pol_guardrail_input",
+      "name": "输入安全防护",
+      "type": "guardrail",
+      "status": "active",
+      "version": "1.0.0",
+      "description": "PII 脱敏、注入攻击拦截、敏感词检测、长度限制",
+      "applies_to": ["SupervisorAgent", "OpenClawAgent", "OpsCopilotAgent"],
+      "rules_count": 4,
+      "updated_at": "2026-04-02T09:00:00Z"
+    },
+    {
+      "policy_id": "pol_fraud_threshold",
+      "name": "欺诈评分阈值",
+      "type": "threshold",
+      "status": "active",
+      "version": "2.1.0",
+      "description": "高风险 >= 0.8 进 HITL，中风险 0.5~0.8 自动标记，低风险 < 0.5 放行",
+      "applies_to": ["FraudScoringService"],
+      "rules_count": 3,
+      "updated_at": "2026-03-28T10:00:00Z"
+    },
+    {
+      "policy_id": "pol_token_budget",
+      "name": "Token 预算控制",
+      "type": "budget",
+      "status": "active",
+      "version": "1.0.0",
+      "description": "单次 run 最大 token 85k，单日总预算 ¥50",
+      "applies_to": ["ALL"],
+      "rules_count": 2,
+      "updated_at": "2026-04-01T09:00:00Z"
+    },
+    {
+      "policy_id": "pol_output_guard",
+      "name": "输出质量防护",
+      "type": "guardrail",
+      "status": "draft",
+      "version": "0.1.0",
+      "description": "校验 Agent 输出 schema 完整性、敏感信息过滤、长度约束",
+      "applies_to": ["InsightComposerAgent", "OpenClawAgent"],
+      "rules_count": 3,
+      "updated_at": "2026-04-02T08:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+export { default as StockSparkline } from './StockSparkline.vue'
+export { default as InventoryHeatmap } from './InventoryHeatmap.vue'
+export { default as SkuDetailPanel } from './SkuDetailPanel.vue'
+export { default as KBSearchPanel } from './KBSearchPanel.vue'
+export { default as InventoryCommandBar } from './InventoryCommandBar.vue'
+export { default as InventoryTrendChart } from './InventoryTrendChart.vue'

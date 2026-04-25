@@ -1,0 +1,436 @@
+/* ═══════════════════════════════════════════════════════════════
+   Element Plus Dark Mode — Custom Overrides
+   将 EP 暗色变量映射到项目 --v2-* 设计令牌
+   必须在 element-plus/theme-chalk/dark/css-vars.css 之后导入
+   ═══════════════════════════════════════════════════════════════ */
+
+html.dark {
+  /* ── 基础色映射 ─────────────────────────────────────────────── */
+  --el-color-primary: var(--v2-brand-primary);
+  --el-color-success: var(--v2-success);
+  --el-color-warning: var(--v2-warning);
+  --el-color-danger: var(--v2-error);
+  --el-color-error: var(--v2-error);
+  --el-color-info: #909399;
+
+  /* ── 背景色 ─────────────────────────────────────────────────── */
+  --el-bg-color-page: var(--v2-bg-page);
+  --el-bg-color: var(--v2-bg-card);
+  --el-bg-color-overlay: var(--v2-bg-elevated);
+
+  /* ── 文字色 ─────────────────────────────────────────────────── */
+  --el-text-color-primary: var(--v2-text-1);
+  --el-text-color-regular: var(--v2-text-2);
+  --el-text-color-secondary: var(--v2-text-3);
+  --el-text-color-placeholder: var(--v2-text-4);
+  --el-text-color-disabled: var(--v2-text-4);
+
+  /* ── 边框色 ─────────────────────────────────────────────────── */
+  --el-border-color-darker: var(--v2-border-3);
+  --el-border-color-dark: var(--v2-border-3);
+  --el-border-color: var(--v2-border-1);
+  --el-border-color-light: var(--v2-border-2);
+  --el-border-color-lighter: var(--v2-border-2);
+  --el-border-color-extra-light: var(--v2-border-2);
+
+  /* ── 填充色 ─────────────────────────────────────────────────── */
+  --el-fill-color-darker: var(--v2-bg-active);
+  --el-fill-color-dark: var(--v2-bg-hover);
+  --el-fill-color: var(--v2-bg-elevated);
+  --el-fill-color-light: var(--v2-bg-sunken);
+  --el-fill-color-lighter: var(--v2-bg-sunken);
+  --el-fill-color-extra-light: var(--v2-bg-page);
+  --el-fill-color-blank: var(--v2-bg-card);
+
+  /* ── 阴影 ───────────────────────────────────────────────────── */
+  --el-box-shadow: var(--v2-shadow-xl);
+  --el-box-shadow-light: var(--v2-shadow-lg);
+  --el-box-shadow-lighter: var(--v2-shadow-md);
+  --el-box-shadow-dark: var(--v2-shadow-xl);
+
+  /* ── 遮罩 ───────────────────────────────────────────────────── */
+  --el-mask-color: var(--v2-bg-overlay);
+  --el-mask-color-extra-light: rgba(0, 0, 0, 0.3);
+}
+
+/* ── Card 组件 ────────────────────────────────────────────────── */
+html.dark .el-card {
+  --el-card-bg-color: var(--v2-bg-card);
+  --el-fill-color-blank: var(--v2-bg-card);
+  border-color: var(--v2-border-1);
+}
+
+/* ── Dialog 组件 ──────────────────────────────────────────────── */
+html.dark .el-dialog {
+  --el-dialog-bg-color: var(--v2-bg-card);
+  background: var(--v2-bg-card);
+  border: 1px solid var(--v2-border-1);
+}
+html.dark .el-dialog__title { color: var(--v2-text-1); }
+html.dark .el-dialog__headerbtn .el-dialog__close { color: var(--v2-text-3); }
+
+/* ── Drawer 组件 ──────────────────────────────────────────────── */
+html.dark .el-drawer {
+  --el-drawer-bg-color: var(--v2-bg-card);
+  border-color: var(--v2-border-1);
+}
+
+/* ── Form 组件 ────────────────────────────────────────────────── */
+html.dark .el-form-item__label {
+  color: var(--v2-text-2);
+}
+
+/* ── Input / Textarea ─────────────────────────────────────────── */
+html.dark .el-input__wrapper {
+  background-color: var(--v2-bg-sunken);
+  box-shadow: 0 0 0 1px var(--v2-border-1) inset;
+}
+html.dark .el-input__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--v2-border-3) inset;
+}
+html.dark .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--v2-brand-primary) inset;
+}
+html.dark .el-input__inner {
+  color: var(--v2-text-1);
+}
+html.dark .el-input__inner::placeholder {
+  color: var(--v2-text-4);
+}
+html.dark .el-textarea__inner {
+  background-color: var(--v2-bg-sunken);
+  color: var(--v2-text-1);
+  border-color: var(--v2-border-1);
+}
+
+/* ── Select dropdown (teleported) ─────────────────────────────── */
+html.dark .el-select-dropdown {
+  background-color: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-select-dropdown__item {
+  color: var(--v2-text-1);
+}
+html.dark .el-select-dropdown__item.hover,
+html.dark .el-select-dropdown__item:hover {
+  background-color: var(--v2-bg-hover);
+}
+html.dark .el-select-dropdown__item.is-selected {
+  color: var(--v2-brand-primary);
+}
+
+/* ── Dropdown menu (teleported) ───────────────────────────────── */
+html.dark .el-dropdown-menu {
+  background-color: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-dropdown-menu__item {
+  color: var(--v2-text-1);
+}
+html.dark .el-dropdown-menu__item:not(.is-disabled):hover {
+  background-color: var(--v2-bg-hover);
+  color: var(--v2-text-1);
+}
+html.dark .el-dropdown-menu__item--divided::before {
+  background-color: var(--v2-border-2);
+}
+
+/* ── Date Picker / Time Picker (teleported) ───────────────────── */
+html.dark .el-date-editor .el-input__wrapper {
+  background-color: var(--v2-bg-sunken);
+}
+html.dark .el-picker__popper {
+  background: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-picker__popper .el-popper__arrow::before {
+  background: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-date-picker__header-label,
+html.dark .el-date-picker__prev-btn,
+html.dark .el-date-picker__next-btn {
+  color: var(--v2-text-1);
+}
+html.dark .el-date-table th {
+  color: var(--v2-text-3);
+  border-bottom-color: var(--v2-border-2);
+}
+html.dark .el-date-table td .el-date-table-cell__text {
+  color: var(--v2-text-1);
+}
+html.dark .el-date-table td.next-month .el-date-table-cell__text,
+html.dark .el-date-table td.prev-month .el-date-table-cell__text {
+  color: var(--v2-text-4);
+}
+html.dark .el-date-table td.today .el-date-table-cell__text {
+  color: var(--v2-brand-primary);
+}
+html.dark .el-date-table td.available:hover .el-date-table-cell__text {
+  background: var(--v2-bg-hover);
+}
+html.dark .el-date-range-picker__content .el-date-range-picker__header {
+  color: var(--v2-text-1);
+}
+html.dark .el-time-panel {
+  background: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-time-spinner__item {
+  color: var(--v2-text-2);
+}
+html.dark .el-time-spinner__item.is-active {
+  color: var(--v2-text-1);
+}
+
+/* ── Cascader (teleported) ────────────────────────────────────── */
+html.dark .el-cascader__dropdown {
+  background: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-cascader-node {
+  color: var(--v2-text-1);
+}
+html.dark .el-cascader-node:not(.is-disabled):hover,
+html.dark .el-cascader-node:not(.is-disabled):focus {
+  background: var(--v2-bg-hover);
+}
+html.dark .el-cascader-menu {
+  border-right-color: var(--v2-border-2);
+}
+
+/* ── Popover / Tooltip (teleported) ───────────────────────────── */
+html.dark .el-popover.el-popper {
+  background: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+  color: var(--v2-text-1);
+}
+html.dark .el-popper.is-dark {
+  background: var(--v2-bg-elevated);
+  border: 1px solid var(--v2-border-1);
+}
+html.dark .el-popper.is-light {
+  background: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-popper.is-light .el-popper__arrow::before {
+  background: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+
+/* ── Table ────────────────────────────────────────────────────── */
+html.dark .el-table {
+  --el-table-bg-color: var(--v2-bg-card);
+  --el-table-tr-bg-color: var(--v2-bg-card);
+  --el-table-header-bg-color: var(--v2-bg-sunken);
+  --el-table-row-hover-bg-color: var(--v2-bg-hover);
+  --el-table-border-color: var(--v2-border-2);
+  --el-table-text-color: var(--v2-text-1);
+  --el-table-header-text-color: var(--v2-text-3);
+  color: var(--v2-text-1);
+}
+html.dark .el-table th.el-table__cell {
+  background: var(--v2-bg-sunken) !important;
+  color: var(--v2-text-3);
+  border-bottom-color: var(--v2-border-1) !important;
+}
+html.dark .el-table .el-table__row td {
+  color: var(--v2-text-1);
+  border-bottom-color: var(--v2-border-2) !important;
+}
+html.dark .el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: var(--v2-bg-sunken);
+}
+
+/* ── Button ───────────────────────────────────────────────────── */
+html.dark .el-button--default {
+  --el-button-bg-color: var(--v2-bg-elevated);
+  --el-button-border-color: var(--v2-border-1);
+  --el-button-text-color: var(--v2-text-1);
+  --el-button-hover-bg-color: var(--v2-bg-hover);
+  --el-button-hover-border-color: var(--v2-border-3);
+  --el-button-hover-text-color: var(--v2-text-1);
+}
+
+/* ── Pagination ───────────────────────────────────────────────── */
+html.dark .el-pagination {
+  --el-pagination-bg-color: transparent;
+  --el-pagination-button-bg-color: var(--v2-bg-elevated);
+  --el-pagination-button-color: var(--v2-text-2);
+  --el-pagination-hover-color: var(--v2-brand-primary);
+}
+html.dark .el-pager li {
+  background: var(--v2-bg-elevated);
+  color: var(--v2-text-2);
+}
+html.dark .el-pager li.is-active {
+  color: var(--v2-brand-primary);
+}
+
+/* ── Tag ──────────────────────────────────────────────────────── */
+html.dark .el-tag {
+  --el-tag-bg-color: var(--v2-bg-elevated);
+  --el-tag-border-color: var(--v2-border-1);
+  --el-tag-text-color: var(--v2-text-2);
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────── */
+html.dark .el-tabs__item {
+  color: var(--v2-text-3);
+}
+html.dark .el-tabs__item.is-active {
+  color: var(--v2-brand-primary);
+}
+html.dark .el-tabs__nav-wrap::after {
+  background-color: var(--v2-border-2);
+}
+
+/* ── Radio / Checkbox ─────────────────────────────────────────── */
+html.dark .el-radio {
+  --el-radio-text-color: var(--v2-text-1);
+  --el-radio-input-border-color: var(--v2-border-1);
+}
+html.dark .el-radio__label { color: var(--v2-text-1); }
+html.dark .el-radio-button__inner {
+  background-color: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+  color: var(--v2-text-1);
+}
+html.dark .el-radio-button__original-radio:checked + .el-radio-button__inner {
+  background-color: var(--v2-brand-primary);
+  border-color: var(--v2-brand-primary);
+  color: #fff;
+}
+html.dark .el-checkbox {
+  --el-checkbox-text-color: var(--v2-text-1);
+  --el-checkbox-input-border: var(--v2-border-1);
+}
+html.dark .el-checkbox__label { color: var(--v2-text-1); }
+
+/* ── Switch ───────────────────────────────────────────────────── */
+html.dark .el-switch__core {
+  border-color: var(--v2-border-1);
+}
+
+/* ── Message ──────────────────────────────────────────────────── */
+html.dark .el-message {
+  background-color: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+
+/* ── Notification ─────────────────────────────────────────────── */
+html.dark .el-notification {
+  background-color: var(--v2-bg-elevated);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-notification__title { color: var(--v2-text-1); }
+html.dark .el-notification__content { color: var(--v2-text-2); }
+
+/* ── Loading ──────────────────────────────────────────────────── */
+html.dark .el-loading-mask {
+  background-color: rgba(15, 20, 25, 0.7);
+}
+
+/* ── Empty ────────────────────────────────────────────────────── */
+html.dark .el-empty__description p {
+  color: var(--v2-text-3);
+}
+
+/* ── Menu ─────────────────────────────────────────────────────── */
+html.dark .el-menu {
+  --el-menu-bg-color: var(--v2-bg-card);
+  --el-menu-text-color: var(--v2-text-2);
+  --el-menu-active-color: var(--v2-brand-primary);
+  --el-menu-hover-bg-color: var(--v2-bg-hover);
+  border-right-color: var(--v2-border-1);
+}
+
+/* ── Collapse ─────────────────────────────────────────────────── */
+html.dark .el-collapse {
+  --el-collapse-border-color: var(--v2-border-1);
+  --el-collapse-header-bg-color: var(--v2-bg-card);
+  --el-collapse-content-bg-color: var(--v2-bg-card);
+}
+html.dark .el-collapse-item__header {
+  color: var(--v2-text-1);
+  background-color: var(--v2-bg-card);
+  border-bottom-color: var(--v2-border-1);
+}
+html.dark .el-collapse-item__content {
+  color: var(--v2-text-2);
+  background-color: var(--v2-bg-card);
+}
+
+/* ── Descriptions ─────────────────────────────────────────────── */
+html.dark .el-descriptions {
+  --el-descriptions-item-bordered-label-background: var(--v2-bg-sunken);
+}
+html.dark .el-descriptions__label { color: var(--v2-text-3); }
+html.dark .el-descriptions__content { color: var(--v2-text-1); }
+
+/* ── Steps ────────────────────────────────────────────────────── */
+html.dark .el-step__title { color: var(--v2-text-2); }
+html.dark .el-step__title.is-finish { color: var(--v2-text-1); }
+html.dark .el-step__title.is-process { color: var(--v2-text-1); }
+html.dark .el-step__description { color: var(--v2-text-3); }
+
+/* ── Tree ─────────────────────────────────────────────────────── */
+html.dark .el-tree {
+  --el-tree-node-hover-bg-color: var(--v2-bg-hover);
+  background: transparent;
+  color: var(--v2-text-1);
+}
+
+/* ── Alert ────────────────────────────────────────────────────── */
+html.dark .el-alert__title { color: inherit; }
+
+/* ── Breadcrumb ───────────────────────────────────────────────── */
+html.dark .el-breadcrumb__inner { color: var(--v2-text-3); }
+html.dark .el-breadcrumb__inner.is-link:hover { color: var(--v2-brand-primary); }
+html.dark .el-breadcrumb__separator { color: var(--v2-text-4); }
+
+/* ── Progress ─────────────────────────────────────────────────── */
+html.dark .el-progress__text { color: var(--v2-text-1); }
+
+/* ── Badge ────────────────────────────────────────────────────── */
+html.dark .el-badge__content { border-color: var(--v2-bg-card); }
+
+/* ── Divider ──────────────────────────────────────────────────── */
+html.dark .el-divider {
+  border-top-color: var(--v2-border-1);
+}
+html.dark .el-divider__text {
+  background-color: var(--v2-bg-card);
+  color: var(--v2-text-3);
+}
+
+/* ── Result ───────────────────────────────────────────────────── */
+html.dark .el-result__title p { color: var(--v2-text-1); }
+html.dark .el-result__subtitle p { color: var(--v2-text-3); }
+
+/* ── Skeleton ─────────────────────────────────────────────────── */
+html.dark .el-skeleton__item {
+  background: var(--v2-bg-sunken);
+}
+
+/* ── Upload ───────────────────────────────────────────────────── */
+html.dark .el-upload-dragger {
+  background-color: var(--v2-bg-sunken);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-upload-dragger:hover {
+  border-color: var(--v2-brand-primary);
+}
+html.dark .el-upload-list__item { color: var(--v2-text-1); }
+
+/* ── Transfer ─────────────────────────────────────────────────── */
+html.dark .el-transfer-panel {
+  background-color: var(--v2-bg-card);
+  border-color: var(--v2-border-1);
+}
+html.dark .el-transfer-panel__header {
+  background-color: var(--v2-bg-sunken);
+  border-bottom-color: var(--v2-border-1);
+  color: var(--v2-text-1);
+}
+html.dark .el-transfer-panel__body { color: var(--v2-text-1); }

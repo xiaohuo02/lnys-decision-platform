@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Global Resets & "Pixel Tyranny" Rules
+   Competition Edition - 2026
+   ========================================================================== */
+
+/* ── 1. The Canvas ── */
+body {
+  font-family: var(--v2-font-sans);
+  background-color: var(--v2-bg-page);
+  color: var(--v2-text-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: var(--v2-noise-pattern);
+  background-attachment: fixed;
+}
+
+/* ── 2. Scrollbar Tyranny (Minimalist Custom Scrollbar) ── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 9999px;
+}
+:hover::-webkit-scrollbar-thumb {
+  background: var(--v2-border-1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--v2-text-3) !important;
+}
+
+/* ── 3. Universal Reset (Remove borders by default unless explicit) ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ── 4. De-Componentize Element Plus ── */
+
+/* Remove ALL shadows from cards */
+.el-card {
+  border: var(--v2-border-width) solid var(--v2-border-2) !important;
+  border-radius: var(--v2-radius-card) !important;
+  background-color: var(--v2-bg-card) !important;
+  box-shadow: none !important;
+  transition: var(--v2-trans-spring);
+}
+
+/* Button overrides - absolute flat */
+.el-button {
+  border-radius: var(--v2-radius-btn) !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transition: var(--v2-trans-fast);
+}
+.el-button--primary {
+  border: none !important;
+}
+.el-button:hover {
+  transform: translateY(-1px);
+}
+.el-button:active {
+  transform: translateY(1px);
+}
+
+/* Inputs - absolute flat */
+.el-input__wrapper, .el-textarea__inner {
+  box-shadow: 0 0 0 1px var(--v2-border-1) inset !important;
+  border-radius: var(--v2-radius-input) !important;
+  background-color: transparent !important;
+  transition: var(--v2-trans-fast);
+}
+.el-input__wrapper.is-focus, .el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px var(--v2-border-focus) inset !important;
+}
+.el-input__wrapper:hover, .el-textarea__inner:hover {
+  box-shadow: 0 0 0 1px var(--v2-border-2) inset !important;
+  background-color: var(--v2-bg-hover) !important;
+}
+
+/* Tables - no borders, slight bg on hover */
+.el-table {
+  background-color: transparent !important;
+  --el-table-border-color: var(--v2-border-2);
+  --el-table-header-bg-color: transparent;
+  --el-table-row-hover-bg-color: var(--v2-bg-hover);
+}
+.el-table th.el-table__cell {
+  border-bottom: var(--v2-border-width) solid var(--v2-border-2) !important;
+  font-size: 12px;
+  font-family: var(--v2-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--v2-text-3);
+  font-weight: 600;
+}
+.el-table td.el-table__cell {
+  border-bottom: var(--v2-border-width) solid var(--v2-border-2) !important;
+  transition: var(--v2-trans-fast);
+}
+.el-table::before, .el-table::after {
+  display: none !important; /* Remove outer table borders */
+}
+
+/* Dropdowns / Modals / Popovers - Only things that get shadow */
+.el-popper {
+  border: var(--v2-border-width) solid var(--v2-border-1) !important;
+  border-radius: var(--v2-radius-card) !important;
+  box-shadow: var(--v2-shadow-modal) !important;
+  background-color: var(--v2-bg-elevated) !important;
+}
+.el-popper__arrow {
+  display: none !important; /* Hide arrows for a cleaner look */
+}
+
+/* ── 5. Utility Classes for V2 Architecture ── */
+
+/* Typography Utils */
+.v2-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--v2-text-1);
+}
+.v2-mono-meta {
+  font-family: var(--v2-font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--v2-text-3);
+}
+
+/* The Hairline Card Rule */
+.v2-hairline-card {
+  background: var(--v2-bg-card);
+  border: var(--v2-border-width) solid var(--v2-border-2);
+  border-radius: var(--v2-radius-card);
+}
+
+/* Magnetic Hover wrapper (used with VueUse motion if needed, or simple CSS) */
+.v2-magnetic {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v2-magnetic:hover {
+  transform: scale(1.05);
+}
+
+/* Page transitions */
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Global Selection */
+::selection {
+  background: var(--v2-text-1);
+  color: var(--v2-bg-page);
+}

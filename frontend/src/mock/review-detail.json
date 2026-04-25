@@ -1,0 +1,41 @@
+{
+  "case_id": "rev_002",
+  "review_type": "fraud_hitl",
+  "status": "pending",
+  "priority": "high",
+  "title": "高风险交易 TXN-2026040215 需人工审核",
+  "run_id": "run_20260402_001",
+  "agent_name": "FraudScoringService",
+  "created_at": "2026-04-02T10:15:08Z",
+  "auto_score": 0.92,
+  "summary": "短时间内连续 3 笔大额交易，总金额 ¥128,000",
+  "context": {
+    "transaction_id": "TXN-2026040215",
+    "customer_id": "CUST-88210",
+    "amount": 128000,
+    "currency": "CNY",
+    "channel": "mobile_app",
+    "ip_address": "112.45.xxx.xxx",
+    "device_fingerprint": "dev_a3f8e2",
+    "risk_signals": [
+      {"signal": "amount_spike", "description": "交易金额超过近 30 天均值 4.2 倍", "severity": "high"},
+      {"signal": "velocity_alert", "description": "60 分钟内 3 笔交易", "severity": "high"},
+      {"signal": "new_address", "description": "收货地址与历史地址不一致", "severity": "medium"},
+      {"signal": "device_switch", "description": "与上次登录设备不同", "severity": "low"}
+    ],
+    "customer_history": {
+      "account_age_days": 365,
+      "total_orders": 42,
+      "avg_order_amount": 3200,
+      "last_order_date": "2026-03-28",
+      "fraud_history": 0
+    }
+  },
+  "available_actions": [
+    {"action": "approve", "label": "通过", "description": "确认交易正常"},
+    {"action": "reject", "label": "拒绝", "description": "标记为欺诈交易"},
+    {"action": "freeze", "label": "冻结账户", "description": "冻结账户待进一步调查"},
+    {"action": "escalate", "label": "升级", "description": "转交风控主管"}
+  ],
+  "action_history": []
+}

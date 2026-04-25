@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "agent_name": "SupervisorAgent",
+      "display_name": "路由调度 Agent",
+      "description": "请求分类与 Workflow 路由，规则优先 + LLM 兜底",
+      "status": "active",
+      "version": "1.0.0",
+      "allowed_tools": ["规则关键词匹配", "LLM 意图分类 (qwen-plus)"],
+      "forbidden_actions": ["直接运行底层业务模型", "修改数据库", "输出业务结论"],
+      "fallback": "降级到 business_overview",
+      "enters_hitl": false,
+      "total_calls": 47,
+      "avg_latency_ms": 850,
+      "success_rate": 1.0
+    },
+    {
+      "agent_name": "InsightComposerAgent",
+      "display_name": "洞察合成 Agent",
+      "description": "读取多维度 artifact，生成管理层摘要 + 风险提示 + 行动建议",
+      "status": "active",
+      "version": "1.0.0",
+      "allowed_tools": ["ArtifactRef 读取", "ReportRenderingService", "LLM 摘要生成 (qwen-plus)"],
+      "forbidden_actions": ["重新调用底层 ML 服务", "修改数据库", "生成含 PII 的输出"],
+      "fallback": "模板拼接 fallback",
+      "enters_hitl": false,
+      "total_calls": 28,
+      "avg_latency_ms": 5200,
+      "success_rate": 0.96
+    },
+    {
+      "agent_name": "OpenClawAgent",
+      "display_name": "客服对话 Agent",
+      "description": "智能客服多轮对话，订单/物流/售后查询",
+      "status": "active",
+      "version": "0.9.0",
+      "allowed_tools": ["OrderQueryTool", "LogisticsTrackTool", "KnowledgeBaseTool", "LLM (qwen-plus)"],
+      "forbidden_actions": ["修改订单状态", "退款操作", "访问敏感客户信息"],
+      "fallback": "转人工客服",
+      "enters_hitl": true,
+      "total_calls": 7,
+      "avg_latency_ms": 3500,
+      "success_rate": 0.92
+    },
+    {
+      "agent_name": "OpsCopilotAgent",
+      "display_name": "运维 Copilot Agent",
+      "description": "系统监控、日志分析、Trace 诊断辅助",
+      "status": "beta",
+      "version": "0.8.0",
+      "allowed_tools": ["MetricQueryTool", "LogSearchTool", "TraceAnalyzerTool"],
+      "forbidden_actions": ["重启服务", "修改配置", "删除数据"],
+      "fallback": "输出诊断建议，不执行操作",
+      "enters_hitl": false,
+      "total_calls": 3,
+      "avg_latency_ms": 6200,
+      "success_rate": 0.67
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "_comment": "SSE 事件序列模拟 — 前端用 setTimeout 按顺序播放",
+  "run_id": "run_20260402_001",
+  "events": [
+    {
+      "delay_ms": 0,
+      "event": "route_decided",
+      "data": {
+        "run_id": "run_20260402_001",
+        "workflow": "business_overview",
+        "modules": ["data_preparation", "customer_intel", "sales_forecast", "sentiment_intel", "fraud_scoring", "inventory", "insight_composer"]
+      }
+    },
+    {
+      "delay_ms": 500,
+      "event": "step_started",
+      "data": { "run_id": "run_20260402_001", "step_name": "data_preparation", "message": "正在执行 data_preparation..." }
+    },
+    {
+      "delay_ms": 2500,
+      "event": "step_completed",
+      "data": { "run_id": "run_20260402_001", "step_name": "data_preparation", "message": "数据准备完成：935,261 行数据", "latency_ms": 2100, "progress_pct": 14 }
+    },
+    {
+      "delay_ms": 3000,
+      "event": "step_started",
+      "data": { "run_id": "run_20260402_001", "step_name": "customer_intel", "message": "正在执行 customer_intel..." }
+    },
+    {
+      "delay_ms": 3800,
+      "event": "step_completed",
+      "data": { "run_id": "run_20260402_001", "step_name": "customer_intel", "message": "客户洞察完成：RFM 分群 5,852 人", "latency_ms": 800, "progress_pct": 28 }
+    },
+    {
+      "delay_ms": 4000,
+      "event": "step_started",
+      "data": { "run_id": "run_20260402_001", "step_name": "sales_forecast", "message": "正在执行 sales_forecast..." }
+    },
+    {
+      "delay_ms": 4500,
+      "event": "step_completed",
+      "data": { "run_id": "run_20260402_001", "step_name": "sales_forecast", "message": "销售预测完成：环比下降 3.2%", "latency_ms": 500, "progress_pct": 42 }
+    },
+    {
+      "delay_ms": 5000,
+      "event": "step_started",
+      "data": { "run_id": "run_20260402_001", "step_name": "sentiment_intel", "message": "正在执行 sentiment_intel..." }
+    },
+    {
+      "delay_ms": 8200,
+      "event": "step_completed",
+      "data": { "run_id": "run_20260402_001", "step_name": "sentiment_intel", "message": "舆情分析完成：负面占比 12.3%", "latency_ms": 3200, "progress_pct": 56 }
+    },
+    {
+      "delay_ms": 8500,
+      "event": "step_started",
+      "data": { "run_id": "run_20260402_001", "step_name": "fraud_scoring", "message": "正在执行 fraud_scoring..." }
+    },
+    {
+      "delay_ms": 9600,
+      "event": "step_completed",
+      "data": { "run_id": "run_20260402_001", "step_name": "fraud_scoring", "message": "风控评分完成：高风险 3 笔", "latency_ms": 1100, "progress_pct": 70 }
+    },
+    {
+      "delay_ms": 10000,
+      "event": "step_started",
+      "data": { "run_id": "run_20260402_001", "step_name": "inventory", "message": "正在执行 inventory..." }
+    },
+    {
+      "delay_ms": 12500,
+      "event": "step_completed",
+      "data": { "run_id": "run_20260402_001", "step_name": "inventory", "message": "库存优化完成：紧急补货 23 SKU", "latency_ms": 2500, "progress_pct": 84 }
+    },
+    {
+      "delay_ms": 13000,
+      "event": "step_started",
+      "data": { "run_id": "run_20260402_001", "step_name": "insight_composer", "message": "正在生成经营洞察报告 (LLM)..." }
+    },
+    {
+      "delay_ms": 18000,
+      "event": "step_completed",
+      "data": { "run_id": "run_20260402_001", "step_name": "insight_composer", "message": "洞察报告生成完成 (qwen-plus)", "latency_ms": 5000, "progress_pct": 100 }
+    },
+    {
+      "delay_ms": 18500,
+      "event": "final",
+      "data": {
+        "run_id": "run_20260402_001",
+        "status": "completed",
+        "executive_summary": "本次经营分析显示整体运营承压：销售预测环比下降3.2%，客户层面呈现结构性风险...",
+        "risk_highlights": "高价值客户活跃度持续走低；物流与品质问题集中爆发；高风险交易集中在特定渠道...",
+        "node_timings": {
+          "data_preparation": 2.1,
+          "customer_intel": 0.8,
+          "sales_forecast": 0.5,
+          "sentiment_intel": 3.2,
+          "fraud_scoring": 1.1,
+          "inventory": 2.5,
+          "insight_composer": 5.0
+        }
+      }
+    }
+  ]
+}

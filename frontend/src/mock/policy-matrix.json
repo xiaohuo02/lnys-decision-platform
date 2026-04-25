@@ -1,0 +1,48 @@
+{
+  "_comment": "Agent × Tool/Service 权限矩阵 — 前端渲染为表格",
+  "agents": [
+    "CustomerAgent",
+    "ForecastAgent",
+    "FraudAgent",
+    "SentimentAgent",
+    "InventoryAgent",
+    "OpenClawAgent",
+    "AssociationAgent",
+    "SupervisorAgent",
+    "InsightComposerAgent",
+    "OpsCopilotAgent"
+  ],
+  "tools": [
+    "LLM (qwen-plus)",
+    "CustomerIntelligenceService",
+    "SalesForecastService",
+    "SentimentIntelligenceService",
+    "FraudScoringService",
+    "InventoryOptimizationService",
+    "AssociationMiningService",
+    "ReportRenderingService",
+    "OrderQueryTool",
+    "LogisticsTrackTool",
+    "KnowledgeBaseTool",
+    "MetricQueryTool",
+    "LogSearchTool",
+    "TraceAnalyzerTool",
+    "DatabaseWrite"
+  ],
+  "matrix": {
+    "CustomerAgent":         [1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    "ForecastAgent":         [1,0,1,0,0,0,0,0,0,0,0,0,0,0,0],
+    "FraudAgent":            [1,0,0,0,1,0,0,0,0,0,0,0,0,0,0],
+    "SentimentAgent":        [1,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+    "InventoryAgent":        [1,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
+    "OpenClawAgent":         [1,0,0,0,0,0,0,0,1,1,1,0,0,0,0],
+    "AssociationAgent":      [1,0,0,0,0,0,1,0,0,0,0,0,0,0,0],
+    "SupervisorAgent":       [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    "InsightComposerAgent":  [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0],
+    "OpsCopilotAgent":       [1,0,0,0,0,0,0,0,0,0,0,1,1,1,0]
+  },
+  "legend": {
+    "1": "允许调用",
+    "0": "禁止调用"
+  }
+}

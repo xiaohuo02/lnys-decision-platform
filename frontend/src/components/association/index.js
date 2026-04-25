@@ -1,0 +1,6 @@
+export { default as AssociationGraph } from './AssociationGraph.vue'
+export { default as LiftMiniBar } from './LiftMiniBar.vue'
+export { default as RuleDetailPanel } from './RuleDetailPanel.vue'
+export { default as SmartRecommend } from './SmartRecommend.vue'
+export { default as AssociationCommandBar } from './AssociationCommandBar.vue'
+export { default as AssociationKBSearchPanel } from './KBSearchPanel.vue'
