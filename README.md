@@ -257,19 +257,15 @@ LLM_BASE_URL=https://api.mimo.xiaomi.com/v1
 LLM_MODEL_NAME=mimo-v2.5-pro
 ```
 
-Token 将主要消耗于:
+项目中会用到 MiMo 的场景:
 
-1. **Copilot Skill 多轮 Function Calling**(高频,主力消耗)
-2. **InsightComposer 长链合成**(单次输出 2k–4k token)
-3. **Supervisor 意图分类**(高频短请求)
-4. **RiskReview HITL 审核摘要 / OpsCopilot 运维问答**
-5. **100 万上下文窗口**用于跨季度全量报表聚合与历史对话回放
+1. Copilot Skill 的 Function Calling 多轮调用
+2. InsightComposer 多源数据长链合成中文决策报告
+3. Supervisor 意图分类
+4. RiskReview HITL 审核摘要 / OpsCopilot 运维问答
+5. 100 万上下文窗口用于较大规模的报表聚合与对话回放(实验性)
 
-### 承诺产出
-
-- **MiMo-V2.5-Pro vs Qwen3.5-plus 的 A/B 评测报告**,覆盖 5 个维度:路由准确率 / Structured Output 合规率 / Function Calling 成功率 / 端到端延迟 / 单次请求成本
-- 基于项目自带的 `PeriodicEvaluator` 评测中心跑全量回放
-- 评测数据和分析结论**公开回馈社区**
+拿到 Token 后,会先在开发环境对比 MiMo-V2.5-Pro 与 Qwen3.5-plus 在这些场景下的实际表现,再决定线上是否切换。
 
 ---
 
